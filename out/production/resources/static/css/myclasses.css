@@ -1,0 +1,17 @@
+.fc-event, .fc-event-dot{
+    background-color: #46c3bf!important;
+}
+.fc-event {
+    border: 1px solid #46c3bf!important;
+}
+.fc-time-grid .fc-bgevent, .fc-time-grid .fc-event{
+    display: flex!important;
+}
+.fc-content{
+    align-self: center!important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fc-time-grid .fc-slats td{
+    height: 3em!important;
+}

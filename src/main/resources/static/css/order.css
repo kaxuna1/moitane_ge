@@ -1,0 +1,133 @@
+.orderBody {
+    padding-top: 90px !important;
+}
+
+.orderYourClasses a {
+    font-family: brixnorm !important;
+
+}
+
+.orderSumBody {
+    height: 200px;
+}
+
+.infoRowOrder {
+    margin-top: 25px;
+    min-height: 50px;
+}
+
+.infoContentOrder {
+    min-height: 50px;
+    border-bottom: rgba(128, 128, 128, 0.38) solid 1px;
+    font-family: brix !important;
+    font-size: 18px;
+}
+
+.lastinfoContentOrder {
+    border-bottom: none !important;
+}
+
+.orderHeader {
+    width: 100%;
+    height: 60px;
+
+    background-color: #99CCFF;
+    display: flex;
+}
+
+.orderHeader h2 {
+    color: #46c3bf;
+    padding: auto;
+    align-self: center;
+    padding-left: 20px;
+    padding-top: 15px;
+    font-family: brix !important;
+    font-size: 15pt;
+    margin: 0;
+}
+
+.orderProfilePic {
+    height: 60px;
+    margin-top: 18px;
+    margin-left: 20px;
+}
+
+.cityAndClassTypeOrder {
+    margin-top: 25px;
+    padding-left: 20px;
+    color: #333333;
+}
+
+.orderCity {
+    font-family: brix !important;
+    font-size: 14px;
+    color: #333333;
+}
+
+.orderClassRight {
+    font-family: brix !important;
+    font-size: 14px;
+    color: #333333;
+}
+
+.starRatingClassOrder {
+    color: #46c3bf;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    color: #333333;
+}
+
+.stariconOrder {
+    width: 10px;
+    color: #333333;
+}
+
+.classScoreOrder {
+    padding-left: 20px;
+    display: flex;
+    color: #333333;
+}
+
+.orderScoreCountRight {
+    font-family: brix !important;
+    font-weight: 900;
+    font-size: 12px;
+    padding-top: 2px;
+    padding-left: 10px;
+    color: #333333;
+}
+
+.viewsLabelOrder {
+
+    color: #333333;
+    font-family: brix !important;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.orderSummary {
+    padding-top: 25px;
+}
+
+.expandDates {
+    color: #46c3bf;
+}
+
+.hideOrder {
+    display: none !important;
+}
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 480px) {
+    .classBodyCol {
+        padding: 0;
+    }
+    .expandDates{
+        margin-top: 10px;
+    }
+}
+.navbar-custom .nav li a:focus, .navbar-custom .nav li a{
+    color:black!important;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/moitane_ge.iml" filepath="$PROJECT_DIR$/moitane_ge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/moitane_ge_main.iml" filepath="$PROJECT_DIR$/.idea/modules/moitane_ge_main.iml" group="moitane_ge" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/moitane_ge_test.iml" filepath="$PROJECT_DIR$/.idea/modules/moitane_ge_test.iml" group="moitane_ge" />
+    </modules>
+  </component>
+</project>

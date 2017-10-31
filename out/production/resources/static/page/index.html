@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://www.bdinfosys.com/demo/materialx/ -->
+<html class="no-js""><!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="./files/css.css">
+    <link type="text/css" rel="stylesheet" href="./scroller.css">
+    <link type="text/css" rel="stylesheet" href="./select.css">
+    <link type="text/css" rel="stylesheet" href="./headerbutton.css">
+    <style type="text/css">.gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div {
+        font-size: 10px
+    }</style>
+    <style type="text/css">
+        @media print {
+            .gm-style .gmnoprint, .gmnoprint {
+                display: none
+            }
+        }
+
+        @media screen {
+            .gm-style .gmnoscreen, .gmnoscreen {
+                display: none
+            }
+        }
+        #dots{
+            position: absolute;
+            width: 100%; height: 100%;
+            top: 0; right: 0; bottom: 0; left: 0;
+        }
+    </style>
+    <style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+    }
+
+    .gm-style img {
+        max-width: none;
+    }</style>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ALLWITZ</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="http://www.bdinfosys.com/demo/materialx/images/favicon.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.3.0/tinycolor.min.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./files/normalize.css">
+    <link rel="stylesheet" href="./files/font-awesome.min.css">
+    <link rel="stylesheet" href="./files/materialize.min.css"
+          media="screen,projection">
+    <link rel="stylesheet" href="./files/bootstrap.css"
+          media="screen,projection">
+
+    <link rel="stylesheet" href="./files/animate.min.css"
+          media="screen,projection">
+    <link rel="stylesheet" href="./files/sweet-alert.css"
+          media="screen,projection">
+
+    <link rel="stylesheet" href="./files/owl.carousel.css"
+          media="screen,projection">
+    <link rel="stylesheet" href="./files/owl.transitions.css"
+          media="screen,projection">
+    <link rel="stylesheet" href="./files/owl.theme.css"
+          media="screen,projection">
+
+    <link rel="stylesheet" href="./files/main.css">
+    <link rel="stylesheet" href="./files/responsive.css">
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="selectanimation.css">
+
+    <!-- Choose your default colors -->
+    <link rel="stylesheet" href="./files/color/var.css">
+    <!-- <link rel="stylesheet" href="assets/css/colors/color2.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/colors/color3.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/colors/color4.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/colors/color5.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/colors/color6.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/colors/color7.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/colors/color8.css"> -->
+
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+
+    <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+    .en-markup-crop-options {
+        top: 18px !important;
+        left: 50% !important;
+        margin-left: -100px !important;
+        width: 200px !important;
+        border: 2px rgba(255, 255, 255, .38) solid !important;
+        border-radius: 4px !important;
+    }
+
+    .en-markup-crop-options div div:first-of-type {
+        margin-left: 0px !important;
+    }
+    </style>
+</head>
+
+<body>
+<div style="position: absolute; z-index: 10000;left: 200px; display: block;" class="color-picker-panel">
+    <div class="panel-row">
+        <div class="swatches default-swatches"></div>
+        <button class="button eyedropper">Get Color</button>
+    </div>
+    <div class="panel-row">
+        <div class="spectrum-map">
+            <button id="spectrum-cursor" class="color-cursor"></button>
+            <canvas id="spectrum-canvas"></canvas>
+        </div>
+        <div class="hue-map">
+            <button id="hue-cursor" class="color-cursor"></button>
+            <canvas id="hue-canvas"></canvas>
+        </div>
+    </div>
+    <div class="panel-row">
+        <div id="rgb-fields" class="field-classType value-fields rgb-fields active">
+            <div class="field-classType">
+                <label class="field-label">R:</label>
+                <input type="number" max="255" min="0" id="red" class="field-input rgb-input"/>
+            </div>
+            <div class="field-classType">
+                <label for="" class="field-label">G:</label>
+                <input type="number" max="255" min="0" id="green" class="field-input rgb-input"/>
+            </div>
+            <div class="field-classType">
+                <label for="" class="field-label">B:</label>
+                <input type="number" max="255" min="0" id="blue" class="field-input rgb-input"/>
+            </div>
+        </div>
+        <div id="hex-field" class="field-classType value-fields hex-field">
+            <label for="" class="field-label">Hex:</label>
+            <input type="text" id="hex" class="field-input"/>
+        </div>
+        <button id="mode-toggle" class="button mode-toggle">Mode</button>
+    </div>
+    <div class="panel-row">
+        <h2 class="panel-header">User Colors</h2>
+        <div id="user-swatches" class="swatches custom-swatches">
+        </div>
+        <button id="add-swatch" class="button add-swatch">
+            <span id="color-indicator" class="color-indicator"></span><span>Add to Swatches</span>
+        </button>
+    </div>
+</div>
+
+<!-- start option panel -->
+<div id="switch">
+    <div class="content-switcher">
+        <p class="brand-text">ფერების შერჩევა:</p>
+        <ul class="header">
+            <li><a href="#" onclick="setActiveStyleSheet('color1'); return false;" class="button color switch"
+                   style="background-color:#00bcd4"></a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('color2'); return false;" class="button color switch"
+                   style="background-color:#ff4081"></a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('color3'); return false;" class="button color switch"
+                   style="background-color:#C043D5"></a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('color4'); return false;" class="button color switch"
+                   style="background-color:#73D077"></a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('color5'); return false;" class="button color switch"
+                   style="background-color:#FE7448"></a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('color6'); return false;" class="button color switch"
+                   style="background-color:#1ABBAC"></a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('color7'); return false;" class="button color switch"
+                   style="background-color:#EAB82E"></a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('color8'); return false;" class="button color switch"
+                   style="background-color:#799CAC"></a></li>
+        </ul>
+        <p class="brand-text">დამატებითი პარამეტრები:</p>
+
+
+        <div id="hide">
+            <i class="fa fa-times"></i>
+        </div>
+    </div>
+</div>
+<div id="show" class="btn-floating waves-effect waves-light btn-large brand-text">
+    <i class="fa fa-cog"></i>
+</div>
+<!-- end option panel -->
+
+<!-- Preloader -->
+<div id="preloader" style="display: block;">
+    <div class="loader" style="display: block;">
+        <svg class="circle-loader" height="50" width="50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"></circle>
+        </svg>
+    </div>
+</div><!--preloader end-->
+
+<!-- Main Container -->
+<main id="app" class="main-section">
+
+    <!-- header navigation start -->
+    <header id="navigation" style="" class="root-sec nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="nav-inner">
+                        <nav class="primary-nav">
+                            <div class="clearfix nav-wrapper">
+                                <a href="#home" class="left brand-logo menu-smooth-scroll" data-section="#home"><img
+                                        onclick=' $(".color-picker-panel").slideToggle() ;' id="imglogo"
+                                        style="margin-top: 0px;height: 80px;" src="./files/logo.png" alt="">
+                                </a>
+                                <a href="#" data-activates="mobile-demo" class="button-collapse"><i
+                                        class="mdi-navigation-menu"></i></a>
+                                <ul class="right static-menu">
+                                    <li>
+                                        <a class="dropdown-button blog-submenu-init" href="#!"
+                                           data-activates="dropdown1">
+                                            <i class="mdi-navigation-more-vert right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="inline-menu side-nav" id="mobile-demo">
+
+                                    <!-- Mini Profile // only visible in Tab and Mobile -->
+
+
+                                    <li class=""><a href="#"
+                                                    class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Sign
+                                        Up</a>
+                                    </li>
+                                    <li class=""><a href="#" class="menu-smooth-scroll"><i
+                                            class="fa fa-users fa-fw"></i>Log in</a>
+                                    </li>
+                                    <li class=""><a href="#"
+                                                    class="menu-smooth-scroll"><i class="fa fa-comments fa-fw"></i>Help</a>
+                                    </li>
+                                    <li class=""><a href="#" class="menu-smooth-scroll"><i
+                                            class="fa fa-pencil fa-fw"></i>Blog</a>
+                                    </li>
+                                    <li onclick=' $(".color-picker-panel").slideToggle() ;' class=""><a id="colorsButton" href="#"
+                                                    class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>colors</a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .container end -->
+    </header>
+    <!-- #header  navigation end -->
+
+    <!-- Home Section start -->
+    <section style="" id="home" class="scroll-section root-sec grey lighten-5 home-wrap">
+        <canvas id="dots"></canvas>
+        <div class="sec-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="home-inner">
+                            <div class="center-align home-content">
+                                <h1 class="home-title">Learn
+                                    <div class="scroller">
+                                        <span class="scroller-item">History</span>
+                                        <span class="scroller-item">Math</span>
+                                        <span class="scroller-item">Chemistry</span>
+                                        <span class="scroller-item">Biology</span>
+                                        <span class="scroller-item">English</span>
+                                        <span class="scroller-item">Driving</span>
+                                        <span class="scroller-item">Swimming</span>
+                                        <span class="scroller-item">Yoga</span>
+                                        <span class="scroller-item">Coding</span>
+                                        <span class="scroller-item">Box</span>
+                                        <span class="scroller-item">History</span>
+
+                                    </div>
+                                </h1>
+                                <h2 class="home-subtitle">
+
+                                    <select name="sources" id="sources"
+                                            class="custom-select sources"
+                                            placeholder="City">
+                                        <option value="profile">Tbilisi</option>
+                                        <option value="word">SanFrancisco</option>
+                                        <option value="hashtag">Paris</option>
+                                    </select>
+
+
+                                    <select name="sources" id="sources2"
+                                            class="custom-select sources"
+                                            placeholder="Category">
+                                        <option value="profile">Math</option>
+                                        <option value="word">Chemistry</option>
+                                        <option value="hashtag">Music</option>
+                                    </select></h2>
+                                <div class="btn-search"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .container end -->
+            <div class="section-call-to-area">
+                <div class="container">
+                    <div class="row">
+                        <a href="#about"
+                           class="btn-floating btn-large button-middle call-to-about section-call-to-btn animated btn-show"
+                           data-section="#about">
+                            <i class="mdi-navigation-expand-more"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- .container end -->
+            </div>
+        </div>
+    </section>
+    <!-- #home Section end -->
+
+    <!-- About Section start -->
+    <!-- #about Section end -->
+
+    <!-- Resume Section start -->
+    <!-- #resume Section end -->
+
+    <!-- Portfolio Section start -->
+    <section id="categories"style="background-color: #dad9df" class="scroll-section root-sec  portfolio-wrap">
+        <div style="/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ee9cac+0,f7b5bf+37,e799a8+71,aa5d6d+100 */
+background: rgb(238,156,172); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(238,156,172,1) 0%, rgba(247,181,191,1) 37%, rgba(231,153,168,1) 71%, rgba(170,93,109,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(238,156,172,1) 0%,rgba(247,181,191,1) 37%,rgba(231,153,168,1) 71%,rgba(170,93,109,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(238,156,172,1) 0%,rgba(247,181,191,1) 37%,rgba(231,153,168,1) 71%,rgba(170,93,109,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee9cac', endColorstr='#aa5d6d',GradientType=0 ); /* IE6-9 */" class="padd-tb-120 brand-bg portfolio-top">
+            <div class="portfolio-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="title">CATEGORIES</h2>
+                            <ul class="inline-menu clearfix portfolio-category" id="portfolio-msnry-sort">
+                                <li class="active"><a href="#" data-target="*">All</a>
+                                </li>
+                                <li><a href="#" data-target=".category-1">Art</a>
+                                </li>
+                                <li><a href="#" data-target=".category-2">Math</a>
+                                </li>
+                                <li><a href="#" data-target=".category-3">Design</a>
+                                </li>
+                                <li><a href="#" data-target=".category-4">technologies</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .container end -->
+        </div>
+
+
+        <div class="portfolio-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="clearfix protfolio-item" id="protfolio-msnry"
+                            style="position: relative; height: 548.312px;">
+
+                            <!-- Single Portfolio-->
+                            <li class="single-port-item category-1 category-3"
+                                style="position: absolute; left: 0px; top: 0px;">
+                                <a href="#categories" class="waves-effect waves-block waves-light ">
+                                    <!-- Portfolio pop-up content-->
+                                    <div class="protfolio-image">
+                                        <img src="./files/pf1.jpg"
+                                             alt="portfolio"> <!-- portfolio thumbnail-->
+                                        <div class="protfolio-content waves-effect waves-block waves-light">
+                                            <div class="protfolio-content__inner">
+                                                <h2 class="p-title">item name</h2>
+                                            </div>
+                                        </div>
+                                        <div class="p-overlay"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!--/ single portfolio -->
+
+                            <!-- Single Portfolio-->
+                            <li class="single-port-item category-2 category-1"
+                                style="position: absolute; left: 379px; top: 0px;">
+                                <a href="#categories" class="waves-effect waves-block waves-light "
+                                   data-image-source="http://placehold.it/650x350"
+                                   data-title="Your awesome portfolio title"
+                                   data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior."
+                                   data-demo-link="#">
+                                    <div class="protfolio-image">
+                                        <img src="./files/pf2.jpg"
+                                             alt="portfolio">
+                                        <div class="protfolio-content waves-effect waves-block waves-light">
+                                            <div class="protfolio-content__inner">
+                                                <h2 class="p-title">item name</h2>
+                                            </div>
+                                        </div>
+                                        <div class="p-overlay"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!--/ single portfolio -->
+
+                            <!-- Single Portfolio-->
+                            <li class="single-port-item category-1 category-2"
+                                style="position: absolute; left: 759px; top: 0px;">
+                                <a href="#categories" class="waves-effect waves-block waves-light "
+                                   data-image-source="http://placehold.it/650x350"
+                                   data-title="Your awesome portfolio title"
+                                   data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior."
+                                   data-demo-link="#">
+                                    <div class="protfolio-image">
+                                        <img src="./files/pf3.jpg"
+                                             alt="portfolio">
+                                        <div class="protfolio-content waves-effect waves-block waves-light">
+                                            <div class="protfolio-content__inner">
+                                                <h2 class="p-title">item name</h2>
+                                            </div>
+                                        </div>
+                                        <div class="p-overlay"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!--/ single portfolio -->
+
+                            <!-- Single Portfolio-->
+                            <li class="single-port-item category-3" style="position: absolute; left: 0px; top: 274px;">
+                                <a href="#categories" class="waves-effect waves-block waves-light "
+                                   data-image-source="http://placehold.it/650x350"
+                                   data-title="Your awesome portfolio title"
+                                   data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior."
+                                   data-demo-link="#">
+                                    <div class="protfolio-image">
+                                        <img src="./files/pf4.jpg"
+                                             alt="portfolio">
+                                        <div class="protfolio-content waves-effect waves-block waves-light">
+                                            <div class="protfolio-content__inner">
+                                                <h2 class="p-title">item name</h2>
+                                            </div>
+                                        </div>
+                                        <div class="p-overlay"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!--/ single portfolio -->
+
+                            <!-- Single Portfolio-->
+                            <li class="single-port-item category-1 category-3 category-4"
+                                style="position: absolute; left: 379px; top: 274px;">
+                                <a href="#categories" class="waves-effect waves-block waves-light ">
+                                    <div class="protfolio-image">
+                                        <img src="./files/pf5.jpg"
+                                             alt="portfolio">
+                                        <div class="protfolio-content waves-effect waves-block waves-light">
+                                            <div class="protfolio-content__inner">
+                                                <h2 class="p-title">item name</h2>
+                                            </div>
+                                        </div>
+                                        <div class="p-overlay"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!--/ single portfolio -->
+
+                            <!-- Single Portfolio-->
+                            <li class="single-port-item category-2 category-4"
+                                style="position: absolute; left: 759px; top: 274px;">
+                                <a href="#categories" class="waves-effect waves-block waves-light "
+                                   data-image-source="http://placehold.it/650x350"
+                                   data-title="Your awesome portfolio title"
+                                   data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior."
+                                   data-demo-link="#">
+                                    <div class="protfolio-image">
+                                        <img src="./files/pf6.jpg"
+                                             alt="portfolio">
+                                        <div class="protfolio-content waves-effect waves-block waves-light">
+                                            <div class="protfolio-content__inner">
+                                                <h2 class="p-title">item name</h2>
+                                            </div>
+                                        </div>
+                                        <div class="p-overlay"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!--/ single portfolio -->
+
+                        </ul>
+                        <!-- portfolio load more button-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- #portfolio Section end -->
+
+    <!-- Team Section end -->
+
+    <!-- #team Section end -->
+
+    <!-- Funfacts Section end -->
+    <!-- #funfacts Section end -->
+
+    <!-- Testimonial Section end -->
+    <!-- #testimonial Section end -->
+
+    <!-- Blog Section end -->
+    <section id="blog" class="scroll-section root-sec grey brand-bg padd-tb-120 blog-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="blog-inner">
+                    <div class="col-sm-12 card-box-wrap">
+                        <div class="row">
+                            <div class="clearfix section-head blog-text">
+                                <div class="col-sm-10">
+                                    <h2 class="title">Popular</h2>
+                                </div>
+                            </div>
+                            <div class="clearfix card-element-wrapper" id="blog-posts"
+                                 style="position: relative; height: 487px;">
+                                <article class="col-sm-6 col-md-4 single-card-box single-post"
+                                         style="position: absolute; left: 0px; top: 0px;">
+                                    <div class="card wow fadeInUpSmall animated" data-wow-duration=".7s"
+                                         style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUpSmall;">
+                                        <div class="card-image">
+                                            <div class="card-img-wrap">
+                                                <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                                    <a href="#"><img
+                                                            class="activator"
+                                                            src="./files/blog1.jpg"
+                                                            alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="post-body">
+                                                    <a href="#"
+                                                       class="post-title-link brand-text"><h2 class="post-title">
+                                                        Photography Courses</h2></a>
+                                                    <p class="post-content">In consectetuer turpis ut velit. Sed lectus.
+                                                        Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum
+                                                        fringilla pede sit amet augue. Ut varius tincidunt libero.
+                                                        Pellentesque dapibus hendrerit tortor. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix card-content">
+                                            <a href="#" class="left js-favorite" title="Love this"><i
+                                                    class="mdi-action-favorite"></i><span class="numb">15</span></a>
+                                            <a href="#"
+                                               class="brand-text right waves-effect">Read More</a>
+                                        </div>
+                                    </div>
+                                </article> <!-- ./single blog post end -->
+                                <article class="col-sm-6 col-md-4  single-card-box single-post"
+                                         style="position: absolute; left: 390px; top: 0px;">
+                                    <div class="card wow fadeInUpSmall animated" data-wow-delay=".2s"
+                                         data-wow-duration=".7s"
+                                         style="visibility: visible; animation-duration: 0.7s; animation-delay: 0.2s; animation-name: fadeInUpSmall;">
+                                        <div class="card-image">
+                                            <div class="card-img-wrap">
+                                                <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                                    <a href="#"><img
+                                                            class="activator"
+                                                            src="./files/blog2.jpg"
+                                                            alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="post-body">
+                                                    <a href="#"
+                                                       class="post-title-link brand-text"><h2 class="post-title">Pet
+                                                        Training</h2></a>
+                                                    <p class="post-content">In consectetuer turpis ut velit. Sed lectus.
+                                                        Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum
+                                                        fringilla pede sit amet augue. Ut varius tincidunt libero.
+                                                        Pellentesque dapibus hendrerit tortor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix card-content">
+                                            <a href="#" class="left js-favorite active" title="Love this"><i
+                                                    class="mdi-action-favorite"></i><span class="numb">23</span></a>
+                                            <a href="#"
+                                               class="brand-text right waves-effect">Read More</a>
+                                        </div>
+                                    </div>
+                                </article> <!-- ./single blog post end -->
+                                <article class="col-sm-6 col-md-4 single-card-box single-post"
+                                         style="position: absolute; left: 780px; top: 0px;">
+                                    <div class="card wow fadeInUpSmall animated" data-wow-delay=".4s"
+                                         data-wow-duration=".7s"
+                                         style="visibility: visible; animation-duration: 0.7s; animation-delay: 0.4s; animation-name: fadeInUpSmall;">
+                                        <div class="card-image">
+                                            <div class="card-img-wrap">
+                                                <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                                    <a href="#"><img
+                                                            class="activator"
+                                                            src="./files/blog3.jpg"
+                                                            alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="post-body">
+                                                    <a href="#"
+                                                       class="post-title-link brand-text"><h2 class="post-title">
+                                                        Cooking</h2></a>
+                                                    <p class="post-content">In consectetuer turpis ut velit. Sed lectus.
+                                                        Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum
+                                                        fringilla pede sit amet augue. Ut varius tincidunt libero.
+                                                        Pellentesque dapibus hendrerit tortor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix card-content">
+                                            <a href="#" class="left js-favorite" title="Love this"><i
+                                                    class="mdi-action-favorite"></i><span class="numb">17</span></a>
+                                            <a href="#"
+                                               class="brand-text right waves-effect">Read More</a>
+                                        </div>
+                                    </div>
+                                </article> <!-- ./single blog post end -->
+                            </div>
+                            <div class="clearfix left-align">
+                                <div class="col-sm-12">
+                                    <a href="#"
+                                       class="waves-effect waves-light btn-large load-more">See More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- ./container -->
+    </section>
+    <!-- #blog Section end -->
+
+    <!-- Contact Section end -->
+    <!-- #contact Section end -->
+
+    <!-- Footer Section end -->
+    <footer id="footer" style="background-color: #dad9df" class="root-sec root-sec footer-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clearfix footer-inner">
+                        <ul class="left social-icons">
+                            <li><a href="#" class="tooltips tooltipped facebook" data-position="top" data-delay="50"
+                                   data-tooltip="Facebook"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#" class="tooltips tooltipped twitter" data-position="top" data-delay="50"
+                                   data-tooltip="Twitter"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#" class="tooltips tooltipped google-plus" data-position="top" data-delay="50"
+                                   data-tooltip="Google Plus"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                        </ul> <!-- ./social icons end -->
+                        <div class="right copyright">
+                            <p>TECHNO Net. © All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- ./container end-->
+    </footer>
+    <!-- #footer end -->
+
+</main>
+<!-- Main Container end-->
+
+
+<!-- JavaScripts -->
+<script type="text/javascript" src="./files/jquery.min.js"></script>
+<script src="./files/jquery.easing.1.3.js"></script>
+<script src="./files/detectmobilebrowser.js"></script>
+<script src="./files/isotope.pkgd.min.js"></script>
+<script src="./files/wow.min.js"></script>
+<script src="./files/waypoints.js"></script>
+<script src="./files/jquery.counterup.min.js"></script>
+<script src="./files/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="./files/js.js"></script>
+<script src="./files/owl.carousel.min.js"></script>
+<script src="./files/materialize.min.js"></script>
+<script src="./files/jwplayer.js"></script>
+<script src="./files/sweet-alert.min.js"></script>
+<script src="./files/common1.js"></script>
+<script src="./files/main.js"></script>
+
+
+<div class="material-tooltip"><span>Facebook</span>
+    <div class="backdrop" style="top: 0px; left: 0px;"></div>
+</div>
+<div class="material-tooltip"><span>Linkdin</span>
+    <div class="backdrop" style="top: 0px; left: 0px;"></div>
+</div>
+<div class="material-tooltip"><span>Twitter</span>
+    <div class="backdrop" style="top: 0px; left: 0px;"></div>
+</div>
+<div class="material-tooltip"><span>Google Plus</span>
+    <div class="backdrop" style="top: 0px; left: 0px;"></div>
+</div>
+<div class="material-tooltip"><span>Dribbble</span>
+    <div class="backdrop" style="top: 0px; left: 0px;"></div>
+</div>
+<div class="material-tooltip"><span>Behance</span>
+    <div class="backdrop" style="top: 0px; left: 0px;"></div>
+</div>
+<div class="hiddendiv common" style="width: 418px;"></div>
+<ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
+    <li>Home</li>
+    <li onclick=' $(".color-picker-panel").slideToggle() ;'><a href="#">Color switcher</a>
+</ul>
+<div class="drag-target"
+     style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+<div id="ascrail2000" class="nicescroll-rails"
+     style="width: 9px; z-index: 9999999; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 7px; height: 55px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div>
+</div>
+<div id="ascrail2000-hr" class="nicescroll-rails"
+     style="height: 9px; z-index: 9999999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;">
+    <div style="position: relative; top: 0px; height: 7px; width: 1366px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div>
+</div>
+<script>
+    $(".custom-select").each(function () {
+        var classes = $(this).attr("class"),
+            id = $(this).attr("id"),
+            name = $(this).attr("name");
+        var template = '<div class="' + classes + '">';
+        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+        template += '<div class="custom-options">';
+        $(this).find("option").each(function () {
+            template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+        });
+        template += '</div></div>';
+
+        $(this).wrap('<div class="custom-select-wrapper"></div>');
+        $(this).hide();
+        $(this).after(template);
+    });
+    $(".custom-option:first-of-type").hover(function () {
+        $(this).parents(".custom-options").addClass("option-hover");
+    }, function () {
+        $(this).parents(".custom-options").removeClass("option-hover");
+    });
+    $(".custom-select-trigger").on("click", function () {
+        $('html').one('click', function () {
+            $(".custom-select").removeClass("opened");
+        });
+        $(this).parents(".custom-select").toggleClass("opened");
+        event.stopPropagation();
+    });
+    $(".custom-option").on("click", function () {
+        $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+        $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+        $(this).addClass("selection");
+        $(this).parents(".custom-select").removeClass("opened");
+        $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    });
+    $(document).load(function () {
+        $("#imglogo").click(function () {
+            alert("kaxa")
+            $(".color-picker-panel").slideToggle();
+        });
+    });
+
+</script>
+<script src="color.js"></script>
+<script src="connections.js"></script>
+</body>
+</html>

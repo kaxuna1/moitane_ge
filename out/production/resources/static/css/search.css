@@ -1,0 +1,213 @@
+.revileMenu{
+    position: absolute;
+    height: 90px;
+    width: 200px;
+    z-index: 100;
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: none;
+}
+.revileMenuPrice{
+    position: absolute;
+    height: 120px;
+    display: none;
+    width: 300px;
+    z-index: 100;
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+
+}
+.revileMenuMore{
+    position: absolute;
+    display: none;
+    width: 90%;
+    left:5%;
+    max-width: 570px;
+    z-index: 100;
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+
+}
+.activeItem div{
+    display: block!important;
+}
+.hr{
+    opacity: 0.3;
+}
+@media only screen
+and (min-width : 340px)
+and (max-width : 480px) {
+    /* Styles */
+    .revileMenuPrice{
+        left: 10%;
+    }
+}@media only screen
+and (min-width : 320px)
+and (max-width : 340px) {
+    /* Styles */
+    .revileMenuPrice{
+        left: 5%;
+    }
+}
+
+
+
+@media only screen
+and (min-width : 1024px) {
+
+}
+
+@media only screen
+and (min-width : 1500px) {
+    .filtersDiv,.searchFieldsRow,.mainCont{
+        zoom: 1.05;
+    }
+}
+
+@media only screen
+and (min-width : 1600px) {
+    .filtersDiv,.searchFieldsRow,.mainCont{
+        zoom: 1.111;
+    }
+}
+
+@media only screen
+and (min-width : 1824px) {
+    .filtersDiv,.searchFieldsRow,.mainCont{
+        zoom: 1.333;
+    }
+
+}
+
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+    /* Styles */
+
+
+    .dropdown-menu{
+        width: calc(100%)!important;
+        left: 0px!important;
+        border: none!important;
+        border-radius: 0px!important;
+    }
+    header .intro-text{
+        top:55%
+    }
+    .navbar-toggle{
+        border: none;
+        color: #218769!important;
+        font-size: 25px!important;
+        margin-top: 2px;
+    }
+
+
+    .footerLarge{
+        display: none;
+    }
+}
+
+@media only screen
+and (min-width: 993px) {
+    /* Styles */
+    .footerMin {
+        display: none;
+    }
+}
+@media only screen
+and (max-width: 992px) {
+    /* Styles */
+    .footerLarge {
+        display: none;
+    }
+}
+
+.footerLeft{
+    display: flex;
+}
+.footerLeft li{
+
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover{
+    background-color:rgba(70, 195, 191, 0.69)!important;
+}
+.dropdown-menu a{
+    font-family: brixnorm!important;
+    font-size: 18px;
+}
+.list-group input{
+    float: right;
+}
+.list-group li{
+    margin-top: 5px;
+    font-family: brixLight!important;
+    font-size: 15px;
+}
+.typeahead{
+    padding-top: 0!important;
+    margin:0!important;
+}
+.navbar-custom .nav li a{
+    color: black!important;
+}
+.radio{
+    float: right;
+}
+.quicklinks li{
+    margin-top: 5px;
+}
+.revileMenuMore .col-xs-4{
+    padding-left: 0;
+}
+.list-classType{
+    padding-left: 5px!important;
+}
+    /*
+    .radio {
+        position: relative;
+        margin: 0 1rem 0 0;
+        cursor: pointer;
+        float: right;
+    }
+    .radio:before {
+        -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        -moz-transition: -moz-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        -webkit-transform: scale(0, 0);
+        -moz-transform: scale(0, 0);
+        -ms-transform: scale(0, 0);
+        -o-transform: scale(0, 0);
+        transform: scale(0, 0);
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: -2px;
+        z-index: 1;
+        width: 15px;
+        height: 15px;
+        background: #16a085;
+        border-radius: 50%;
+    }
+    .radio:checked:before {
+        -webkit-transform: scale(1, 1);
+        -moz-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+    .radio:after {content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -2.6px;
+        left: -5.0px;
+        background: #fff;
+        border: 2px solid #f2f2f2;
+        border-radius: 50%;
+    }*/
+#map{
+    height: 100%;
+}

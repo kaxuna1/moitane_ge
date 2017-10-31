@@ -1,0 +1,1013 @@
+body {
+    background-color: #2c3e50;
+    text-align: center;
+}
+
+.indicator {
+    font-size: 100px;
+    vertical-align: top;
+}
+
+.indicator.minus {
+    color: #e74c3c;
+    margin-right: 30px;
+}
+
+.indicator.plus {
+    color: #2ecc71;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.wrapper {
+    min-width: 700px;
+    font-size: 0;
+    margin-top: 40px;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+label {
+    display: inline-block;
+    position: relative;
+    width: 5px;
+    opacity: 1;
+    cursor: pointer;
+    background-color: #1a252f;
+}
+
+label:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    border-style: solid;
+    border-width: 0 0px 1px 5px;
+    border-color: transparent transparent #1a252f transparent;
+}
+
+label.label-rank-1 {
+    height: 1px;
+}
+
+label.label-rank-2 {
+    height: 2px;
+}
+
+label.label-rank-3 {
+    height: 3px;
+}
+
+label.label-rank-4 {
+    height: 4px;
+}
+
+label.label-rank-5 {
+    height: 5px;
+}
+
+label.label-rank-6 {
+    height: 6px;
+}
+
+label.label-rank-7 {
+    height: 7px;
+}
+
+label.label-rank-8 {
+    height: 8px;
+}
+
+label.label-rank-9 {
+    height: 9px;
+}
+
+label.label-rank-10 {
+    height: 10px;
+}
+
+label.label-rank-11 {
+    height: 11px;
+}
+
+label.label-rank-12 {
+    height: 12px;
+}
+
+label.label-rank-13 {
+    height: 13px;
+}
+
+label.label-rank-14 {
+    height: 14px;
+}
+
+label.label-rank-15 {
+    height: 15px;
+}
+
+label.label-rank-16 {
+    height: 16px;
+}
+
+label.label-rank-17 {
+    height: 17px;
+}
+
+label.label-rank-18 {
+    height: 18px;
+}
+
+label.label-rank-19 {
+    height: 19px;
+}
+
+label.label-rank-20 {
+    height: 20px;
+}
+
+label.label-rank-21 {
+    height: 21px;
+}
+
+label.label-rank-22 {
+    height: 22px;
+}
+
+label.label-rank-23 {
+    height: 23px;
+}
+
+label.label-rank-24 {
+    height: 24px;
+}
+
+label.label-rank-25 {
+    height: 25px;
+}
+
+label.label-rank-26 {
+    height: 26px;
+}
+
+label.label-rank-27 {
+    height: 27px;
+}
+
+label.label-rank-28 {
+    height: 28px;
+}
+
+label.label-rank-29 {
+    height: 29px;
+}
+
+label.label-rank-30 {
+    height: 30px;
+}
+
+label.label-rank-31 {
+    height: 31px;
+}
+
+label.label-rank-32 {
+    height: 32px;
+}
+
+label.label-rank-33 {
+    height: 33px;
+}
+
+label.label-rank-34 {
+    height: 34px;
+}
+
+label.label-rank-35 {
+    height: 35px;
+}
+
+label.label-rank-36 {
+    height: 36px;
+}
+
+label.label-rank-37 {
+    height: 37px;
+}
+
+label.label-rank-38 {
+    height: 38px;
+}
+
+label.label-rank-39 {
+    height: 39px;
+}
+
+label.label-rank-40 {
+    height: 40px;
+}
+
+label.label-rank-41 {
+    height: 41px;
+}
+
+label.label-rank-42 {
+    height: 42px;
+}
+
+label.label-rank-43 {
+    height: 43px;
+}
+
+label.label-rank-44 {
+    height: 44px;
+}
+
+label.label-rank-45 {
+    height: 45px;
+}
+
+label.label-rank-46 {
+    height: 46px;
+}
+
+label.label-rank-47 {
+    height: 47px;
+}
+
+label.label-rank-48 {
+    height: 48px;
+}
+
+label.label-rank-49 {
+    height: 49px;
+}
+
+label.label-rank-50 {
+    height: 50px;
+}
+
+label.label-rank-51 {
+    height: 51px;
+}
+
+label.label-rank-52 {
+    height: 52px;
+}
+
+label.label-rank-53 {
+    height: 53px;
+}
+
+label.label-rank-54 {
+    height: 54px;
+}
+
+label.label-rank-55 {
+    height: 55px;
+}
+
+label.label-rank-56 {
+    height: 56px;
+}
+
+label.label-rank-57 {
+    height: 57px;
+}
+
+label.label-rank-58 {
+    height: 58px;
+}
+
+label.label-rank-59 {
+    height: 59px;
+}
+
+label.label-rank-60 {
+    height: 60px;
+}
+
+label.label-rank-61 {
+    height: 61px;
+}
+
+label.label-rank-62 {
+    height: 62px;
+}
+
+label.label-rank-63 {
+    height: 63px;
+}
+
+label.label-rank-64 {
+    height: 64px;
+}
+
+label.label-rank-65 {
+    height: 65px;
+}
+
+label.label-rank-66 {
+    height: 66px;
+}
+
+label.label-rank-67 {
+    height: 67px;
+}
+
+label.label-rank-68 {
+    height: 68px;
+}
+
+label.label-rank-69 {
+    height: 69px;
+}
+
+label.label-rank-70 {
+    height: 70px;
+}
+
+label.label-rank-71 {
+    height: 71px;
+}
+
+label.label-rank-72 {
+    height: 72px;
+}
+
+label.label-rank-73 {
+    height: 73px;
+}
+
+label.label-rank-74 {
+    height: 74px;
+}
+
+label.label-rank-75 {
+    height: 75px;
+}
+
+label.label-rank-76 {
+    height: 76px;
+}
+
+label.label-rank-77 {
+    height: 77px;
+}
+
+label.label-rank-78 {
+    height: 78px;
+}
+
+label.label-rank-79 {
+    height: 79px;
+}
+
+label.label-rank-80 {
+    height: 80px;
+}
+
+label.label-rank-81 {
+    height: 81px;
+}
+
+label.label-rank-82 {
+    height: 82px;
+}
+
+label.label-rank-83 {
+    height: 83px;
+}
+
+label.label-rank-84 {
+    height: 84px;
+}
+
+label.label-rank-85 {
+    height: 85px;
+}
+
+label.label-rank-86 {
+    height: 86px;
+}
+
+label.label-rank-87 {
+    height: 87px;
+}
+
+label.label-rank-88 {
+    height: 88px;
+}
+
+label.label-rank-89 {
+    height: 89px;
+}
+
+label.label-rank-90 {
+    height: 90px;
+}
+
+label.label-rank-91 {
+    height: 91px;
+}
+
+label.label-rank-92 {
+    height: 92px;
+}
+
+label.label-rank-93 {
+    height: 93px;
+}
+
+label.label-rank-94 {
+    height: 94px;
+}
+
+label.label-rank-95 {
+    height: 95px;
+}
+
+label.label-rank-96 {
+    height: 96px;
+}
+
+label.label-rank-97 {
+    height: 97px;
+}
+
+label.label-rank-98 {
+    height: 98px;
+}
+
+label.label-rank-99 {
+    height: 99px;
+}
+
+label.label-rank-100 {
+    height: 100px;
+}
+
+.light-bulb {
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.light-bulb .base {
+    display: inline-block;
+    position: relative;
+}
+
+.light-bulb .base .bulb {
+    position: relative;
+    z-index: 1;
+    width: 320px;
+    height: 320px;
+    border: 3px solid #d0d0d0;
+    background-color: #f8e287;
+    box-shadow: 0 0 50px #f8e287;
+    border-radius: 100%;
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+
+.light-bulb .base .content {
+    position: relative;
+    z-index: 2;
+    width: 160px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: #555555;
+    margin: -25px auto 0;
+}
+
+.light-bulb .base .content .line {
+    width: 176px;
+    height: 14.54545px;
+    margin-bottom: 12.30769px;
+    margin-left: -8px;
+    border-radius: 20px;
+    background-color: #888888;
+}
+
+.light-bulb .base .footer {
+    position: relative;
+    z-index: 1;
+    width: 80px;
+    height: 53.33333px;
+    margin-top: -26.66667px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+    background-color: #333333;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ label {
+    opacity: 0.5;
+}
+
+input.rank-1:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 2px #f1c511;
+    background-color: #f1c511;
+}
+
+input.rank-2:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 4px #f1c514;
+    background-color: #f1c514;
+}
+
+input.rank-3:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 6px #f1c616;
+    background-color: #f1c616;
+}
+
+input.rank-4:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 8px #f2c619;
+    background-color: #f2c619;
+}
+
+input.rank-5:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 10px #f2c71b;
+    background-color: #f2c71b;
+}
+
+input.rank-6:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 12px #f2c81d;
+    background-color: #f2c81d;
+}
+
+input.rank-7:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 14px #f2c820;
+    background-color: #f2c820;
+}
+
+input.rank-8:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 16px #f2c922;
+    background-color: #f2c922;
+}
+
+input.rank-9:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 18px #f2c925;
+    background-color: #f2c925;
+}
+
+input.rank-10:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 20px #f2ca27;
+    background-color: #f2ca27;
+}
+
+input.rank-11:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 22px #f3cb2a;
+    background-color: #f3cb2a;
+}
+
+input.rank-12:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 24px #f3cb2c;
+    background-color: #f3cb2c;
+}
+
+input.rank-13:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 26px #f3cc2e;
+    background-color: #f3cc2e;
+}
+
+input.rank-14:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 28px #f3cc31;
+    background-color: #f3cc31;
+}
+
+input.rank-15:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 30px #f3cd33;
+    background-color: #f3cd33;
+}
+
+input.rank-16:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 32px #f3cd36;
+    background-color: #f3cd36;
+}
+
+input.rank-17:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 34px #f3ce38;
+    background-color: #f3ce38;
+}
+
+input.rank-18:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 36px #f4cf3a;
+    background-color: #f4cf3a;
+}
+
+input.rank-19:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 38px #f4cf3d;
+    background-color: #f4cf3d;
+}
+
+input.rank-20:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 40px #f4d03f;
+    background-color: #f4d03f;
+}
+
+input.rank-21:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 42px #f4d042;
+    background-color: #f4d042;
+}
+
+input.rank-22:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 44px #f4d144;
+    background-color: #f4d144;
+}
+
+input.rank-23:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 46px #f4d246;
+    background-color: #f4d246;
+}
+
+input.rank-24:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 48px #f4d249;
+    background-color: #f4d249;
+}
+
+input.rank-25:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 50px #f5d34b;
+    background-color: #f5d34b;
+}
+
+input.rank-26:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 52px #f5d34e;
+    background-color: #f5d34e;
+}
+
+input.rank-27:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 54px #f5d450;
+    background-color: #f5d450;
+}
+
+input.rank-28:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 56px #f5d552;
+    background-color: #f5d552;
+}
+
+input.rank-29:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 58px #f5d555;
+    background-color: #f5d555;
+}
+
+input.rank-30:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 60px #f5d657;
+    background-color: #f5d657;
+}
+
+input.rank-31:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 62px #f5d65a;
+    background-color: #f5d65a;
+}
+
+input.rank-32:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 64px #f5d75c;
+    background-color: #f5d75c;
+}
+
+input.rank-33:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 66px #f6d85f;
+    background-color: #f6d85f;
+}
+
+input.rank-34:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 68px #f6d861;
+    background-color: #f6d861;
+}
+
+input.rank-35:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 70px #f6d963;
+    background-color: #f6d963;
+}
+
+input.rank-36:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 72px #f6d966;
+    background-color: #f6d966;
+}
+
+input.rank-37:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 74px #f6da68;
+    background-color: #f6da68;
+}
+
+input.rank-38:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 76px #f6db6b;
+    background-color: #f6db6b;
+}
+
+input.rank-39:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 78px #f6db6d;
+    background-color: #f6db6d;
+}
+
+input.rank-40:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 80px #f7dc6f;
+    background-color: #f7dc6f;
+}
+
+input.rank-41:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 82px #f7dc72;
+    background-color: #f7dc72;
+}
+
+input.rank-42:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 84px #f7dd74;
+    background-color: #f7dd74;
+}
+
+input.rank-43:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 86px #f7dd77;
+    background-color: #f7dd77;
+}
+
+input.rank-44:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 88px #f7de79;
+    background-color: #f7de79;
+}
+
+input.rank-45:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 90px #f7df7b;
+    background-color: #f7df7b;
+}
+
+input.rank-46:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 92px #f7df7e;
+    background-color: #f7df7e;
+}
+
+input.rank-47:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 94px #f8e080;
+    background-color: #f8e080;
+}
+
+input.rank-48:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 96px #f8e083;
+    background-color: #f8e083;
+}
+
+input.rank-49:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 98px #f8e185;
+    background-color: #f8e185;
+}
+
+input.rank-50:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 100px #f8e287;
+    background-color: #f8e287;
+}
+
+input.rank-51:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 102px #f8e28a;
+    background-color: #f8e28a;
+}
+
+input.rank-52:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 104px #f8e38c;
+    background-color: #f8e38c;
+}
+
+input.rank-53:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 106px #f8e38f;
+    background-color: #f8e38f;
+}
+
+input.rank-54:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 108px #f9e491;
+    background-color: #f9e491;
+}
+
+input.rank-55:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 110px #f9e594;
+    background-color: #f9e594;
+}
+
+input.rank-56:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 112px #f9e596;
+    background-color: #f9e596;
+}
+
+input.rank-57:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 114px #f9e698;
+    background-color: #f9e698;
+}
+
+input.rank-58:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 116px #f9e69b;
+    background-color: #f9e69b;
+}
+
+input.rank-59:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 118px #f9e79d;
+    background-color: #f9e79d;
+}
+
+input.rank-60:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 120px #f9e8a0;
+    background-color: #f9e8a0;
+}
+
+input.rank-61:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 122px #fae8a2;
+    background-color: #fae8a2;
+}
+
+input.rank-62:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 124px #fae9a4;
+    background-color: #fae9a4;
+}
+
+input.rank-63:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 126px #fae9a7;
+    background-color: #fae9a7;
+}
+
+input.rank-64:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 128px #faeaa9;
+    background-color: #faeaa9;
+}
+
+input.rank-65:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 130px #faebac;
+    background-color: #faebac;
+}
+
+input.rank-66:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 132px #faebae;
+    background-color: #faebae;
+}
+
+input.rank-67:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 134px #faecb0;
+    background-color: #faecb0;
+}
+
+input.rank-68:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 136px #fbecb3;
+    background-color: #fbecb3;
+}
+
+input.rank-69:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 138px #fbedb5;
+    background-color: #fbedb5;
+}
+
+input.rank-70:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 140px #fbedb8;
+    background-color: #fbedb8;
+}
+
+input.rank-71:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 142px #fbeeba;
+    background-color: #fbeeba;
+}
+
+input.rank-72:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 144px #fbefbc;
+    background-color: #fbefbc;
+}
+
+input.rank-73:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 146px #fbefbf;
+    background-color: #fbefbf;
+}
+
+input.rank-74:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 148px #fbf0c1;
+    background-color: #fbf0c1;
+}
+
+input.rank-75:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 150px #fcf0c4;
+    background-color: #fcf0c4;
+}
+
+input.rank-76:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 152px #fcf1c6;
+    background-color: #fcf1c6;
+}
+
+input.rank-77:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 154px #fcf2c9;
+    background-color: #fcf2c9;
+}
+
+input.rank-78:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 156px #fcf2cb;
+    background-color: #fcf2cb;
+}
+
+input.rank-79:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 158px #fcf3cd;
+    background-color: #fcf3cd;
+}
+
+input.rank-80:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 160px #fcf3d0;
+    background-color: #fcf3d0;
+}
+
+input.rank-81:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 162px #fcf4d2;
+    background-color: #fcf4d2;
+}
+
+input.rank-82:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 164px #fdf5d5;
+    background-color: #fdf5d5;
+}
+
+input.rank-83:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 166px #fdf5d7;
+    background-color: #fdf5d7;
+}
+
+input.rank-84:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 168px #fdf6d9;
+    background-color: #fdf6d9;
+}
+
+input.rank-85:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 170px #fdf6dc;
+    background-color: #fdf6dc;
+}
+
+input.rank-86:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 172px #fdf7de;
+    background-color: #fdf7de;
+}
+
+input.rank-87:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 174px #fdf8e1;
+    background-color: #fdf8e1;
+}
+
+input.rank-88:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 176px #fdf8e3;
+    background-color: #fdf8e3;
+}
+
+input.rank-89:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 178px #fef9e5;
+    background-color: #fef9e5;
+}
+
+input.rank-90:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 180px #fef9e8;
+    background-color: #fef9e8;
+}
+
+input.rank-91:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 182px #fefaea;
+    background-color: #fefaea;
+}
+
+input.rank-92:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 184px #fefaed;
+    background-color: #fefaed;
+}
+
+input.rank-93:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 186px #fefbef;
+    background-color: #fefbef;
+}
+
+input.rank-94:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 188px #fefcf1;
+    background-color: #fefcf1;
+}
+
+input.rank-95:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 190px #fefcf4;
+    background-color: #fefcf4;
+}
+
+input.rank-96:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 192px #fefdf6;
+    background-color: #fefdf6;
+}
+
+input.rank-97:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 194px #fffdf9;
+    background-color: #fffdf9;
+}
+
+input.rank-98:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 196px #fffefb;
+    background-color: #fffefb;
+}
+
+input.rank-99:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 198px #fffffe;
+    background-color: #fffffe;
+}
+
+input.rank-100:checked ~ .light-bulb .base .bulb {
+    box-shadow: 0 0 200px white;
+    background-color: white;
+}

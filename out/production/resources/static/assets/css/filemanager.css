@@ -1,0 +1,153 @@
+.min-window {
+    display: none;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: #bdc3c7;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.73);
+}
+.min-window:hover {
+    background-color: #d9dcde;
+}
+
+.doc-browser {
+    height: 100%;
+    background-color: #ecf0f1;
+    box-shadow: 5px 5px 33px rgba(0, 0, 0, 0.73);
+    animation: PULL-DOWN;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.doc-browser .window-bar {
+    height: 35px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #bdc3c7;
+    border-bottom: 1px solid rgba(66, 66, 66, 0.05);
+}
+.doc-browser .window-bar .w-btn {
+    opacity: 1.75;
+    height: 26px;
+    width: 52px;
+    margin: 3px;
+    border-radius: 6px;
+    border: 1px solid rgba(66, 66, 66, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+}
+.doc-browser .window-bar .w-btn:hover {
+    opacity: 1.0;
+}
+.doc-browser .window-bar .w-btn:hover i {
+    opacity: 0.8;
+}
+.doc-browser .window-bar .w-btn i {
+    opacity: 0;
+    color: white;
+    font-size: 6px;
+}
+.doc-browser .window-bar .w-close {
+    margin-left: 6px;
+    background-color: #e74c3c;
+}
+.doc-browser .window-bar .w-min {
+    background-color: #f1c40f;
+}
+.doc-browser .window-bar .w-max {
+    background-color: #27ae60;
+}
+.doc-browser .window-content-view {
+    display: flex;
+    flex-direction: row;
+}
+.doc-browser .window-content-view .sidebar-folder-list {
+    background-color: #CACDD1;
+    height: 365px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: 1px solid rgba(66, 66, 66, 0.3);
+    padding-top: 20px;
+    overflow:auto;
+}
+.doc-browser .window-content-view .sidebar-folder-list .folder-list-item {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+}
+.doc-browser .window-content-view .sidebar-folder-list .folder-list-item i {
+    font-size: 12px;
+    margin-right: 10px;
+}
+.doc-browser .window-content-view .sidebar-folder-list .folder-list-item p {
+    cursor: default;
+    padding-top: 8px;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+}
+.doc-browser .window-content-view .main-content-view {
+    height: 365px;
+    width: 475px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 10px;
+    overflow: auto;
+}
+.doc-browser .window-content-view .main-content-view .content-item {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 5px;
+}
+.doc-browser .window-content-view .main-content-view .content-item:hover {
+    background-color: rgba(66, 66, 66, 0.1);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.doc-browser .window-content-view .main-content-view .content-item .content-icon {
+    margin-bottom: 3px;
+    color: #757575;
+}
+.doc-browser .window-content-view .main-content-view .content-item .fa-bitbucket {
+    color: #205081;
+}
+.doc-browser .window-content-view .main-content-view .content-item .fa-linkedin-square {
+    color: #1E87BE;
+}
+.doc-browser .window-content-view .main-content-view .content-item .fa-folder {
+    color: #F6CF74;
+}
+.doc-browser .window-content-view .main-content-view .content-item .fa-file-pdf-o {
+    color: #E10007;
+}
+.doc-browser .window-content-view .main-content-view .content-item .fa-file-word-o {
+    color: #2A5699;
+}
+.doc-browser .window-content-view .main-content-view .content-item .content-description {
+    font-size: 10px;
+    -webkit-font-smoothing: antialiased;
+    color: #757575;
+    text-align: center;
+}

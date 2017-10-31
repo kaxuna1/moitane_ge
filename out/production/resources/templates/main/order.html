@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Allwitz</title>
+    <link rel="stylesheet" href="radio/kalypto.css">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="radio/kalypto.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script>
+        var strings;
+        $.ajax({
+            type: 'GET',
+            url: 'strings',
+            dataType: 'json',
+            success: function (result) {
+                strings = result;
+            },
+            data: {},
+            async: false
+        });
+    </script>
+    <script src="js/templates.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <meta name="google-signin-client_id"
+          content="493400848528-rvhu5blcif6mhpujdrm083ll77bd53dq.apps.googleusercontent.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/js/widgets/inlinetime.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="assets/css/bootstrap-social.css" rel="stylesheet" type="text/css">
+    <link href="css/grid.css" rel="stylesheet" type="text/css">
+    <meta name="google-signin-client_id"
+          content="493400848528-rvhu5blcif6mhpujdrm083ll77bd53dq.apps.googleusercontent.com">
+    <style>
+
+    </style>
+    <!-- Theme CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/class.css" rel="stylesheet">
+    <link href="css/classmob.css" rel="stylesheet">
+    <link href="css/classl.css" rel="stylesheet">
+    <link href="css/classm.css" rel="stylesheet">
+    <link href="css/order.css" rel="stylesheet">
+
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/calendar.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body style="overflow: visible!important;" id="page-top" class="index">
+
+<!-- Navigation -->
+<nav style="background-color: white;z-index: 500;border-bottom: 1px solid black" id="mainNav"
+     class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div style="width: 100%;" class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button style=";z-index: 100000;" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll brand"
+               style="padding-top: 5px;  padding:0;  font-size: 30px;font-size: 40px;font-family: brixnorm!important; "
+               href="/">Allwitz</a>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul th:if="${!isTeacher}" class="nav navbar-nav navbar-left">
+                <li id="becometeacherbtn">
+                    <a class="page-scroll" th:text="${strings.main_become_a_teacher}" href="#"
+                       style="font-size: 18px;color: black;font-family: brixnorm!important;"></a>
+                </li>
+            </ul>
+            <ul th:if="${!loggedIn}" class="nav navbar-nav navbar-right">
+                <li id="logisignbtn">
+                    <a class="page-scroll" th:text="${strings.main_login_signup}" href="#"
+                       style="font-size: 18px;color: black;font-family: brixnorm!important;padding-right: 0px;"></a>
+                </li>
+                <li class="dropdown" id="langbtn">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true"
+                       aria-expanded="false"><span style="display: flex"><!--<img class="profilePicInHeader" th:src="${profilePicUrl}">--><img
+                            style="height: 20px"id="curLang" src=""></span></a>
+                    <ul class="dropdown-menu">
+                        <li value="1" class="langBtn"><a href="#" style="font-size: 15px"><img style="height: 15px"
+                                                                                        src="png/us.png"><span
+                                style="padding-left: 10px">English</span></a></li>
+                        <li value="2" class="langBtn"><a href="#" style="font-size: 15px"><img style="height: 15px"
+                                                                                        src="png/ge.png"><span
+                                style="padding-left: 10px">Georgian</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul th:if="${loggedIn}" class="nav navbar-nav navbar-right">
+                <li class="dropdown" id="userBtn">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true"
+                       aria-expanded="false"><span style="display: flex"><!--<img class="profilePicInHeader" th:src="${profilePicUrl}">--><span
+                            th:text="${userNameSurname}" class="profName"
+                            style="color: black;font-family: brixnorm!important;"></span></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="profileBtn"><a href="#" th:text="${strings.main_menu_profile}"></a></li>
+                        <li class="settingsBtn"><a href="#" th:text="${strings.main_menu_settings}"></a></li>
+
+                        <li><a class="logoutBtn" href="#" th:text="${strings.main_menu_log_out}"></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="langbtn">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true"
+                       aria-expanded="false"><span style="display: flex"><!--<img class="profilePicInHeader" th:src="${profilePicUrl}">--><img
+                            style="height: 20px" id="curLang" src=""></span></a>
+                    <ul class="dropdown-menu">
+                        <li value="1" class="langBtn"><a href="#" style="font-size: 15px"><img style="height: 15px"
+                                                                                        src="png/us.png"><span
+                                style="padding-left: 10px">English</span></a></li>
+                        <li value="2" class="langBtn"><a href="#" style="font-size: 15px"><img style="height: 15px"
+                                                                                        src="png/ge.png"><span
+                                style="padding-left: 10px">Georgian</span></a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<!-- Header -->
+
+<section class="classBodySection orderBody">
+    <div class="container-fluid classBodyContainer">
+        <div class="row">
+            <div class="col-md-12 classBodyCol">
+                <div class="row">
+
+                    <div class="col-md-3 col-md-push-9  noRightPadding noLeftPadding">
+                        <div class="row">
+                            <div class="col-md-12 noRightPadding noLeftPadding">
+                                <div class="calendarTopDiv">
+                                    <div class="orderHeader">
+                                        <img th:src="${teacherPic}"
+                                             class="img-circle orderProfilePic">
+
+                                        <h2 th:text="${teacherName}">
+
+                                        </h2>
+                                    </div>
+                                    <div class="orderSumBody">
+                                        <div class="row cityAndClassTypeOrder">
+                                            <div th:text="${city}" class="col-sx-6 orderCity"></div>
+                                            <div th:text="${className}" class="col-sx-6 orderClassRight"></div>
+                                        </div>
+                                        <div class="row classScoreOrder">
+                                            <div class="col-sx-3">
+                                                <span class="starRatingClassOrder">
+                                                    <img class="stariconOrder"
+                                                         th:each="i : ${#numbers.sequence( 1, scoreMain)}"
+                                                         src="png/search/v.png">
+                                                </span>
+                                            </div>
+                                            <div th:text="${scoreCount}" class="col-sx-3 orderScoreCountRight"></div>
+                                          <!--  <div class="col-sx-6">
+                                                <span class="viewsLabelOrder">
+                                                   <i style="padding-right: 3px" class="fa fa-eye"
+                                                      aria-hidden="true"></i>450
+                                                </span>
+                                            </div>-->
+                                        </div>
+                                        <div class="orderSummary row">
+                                            <div class="col-md-12">
+                                                <table class="table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="pricextimes" style="border: none">
+
+                                                        </td>
+                                                        <td class="pricextimesSum" style="text-align: right;border: none">
+
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td >
+                                                            Service fee
+                                                        </td>
+                                                        <td class="feePlace" style="text-align: right">
+
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Total
+                                                        </td>
+                                                        <td class="totalPlace" style="text-align: right;font-family: brixnorm!important;"></td>
+
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="bookButtonPlace">
+                                        <button class="btn bookButton">Book</button>
+                                        <span class="warningWontBeCharged">You won’t be charged yet</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-md-pull-3">
+                        <div class="row">
+                            <div class="col-md-12 noLeftPadding">
+                                <ul class="nav nav-pills classNav">
+                                    <li class="noLeftPadding orderYourClasses" role="presentation"><a
+                                            class="noLeftPadding" href="#">Your Classes</a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 infoCol noLeftPadding noRightPadding">
+                                <div class="row infoRowOrder">
+                                    <div class="col-md-4 infoLogoName noLeftPadding">
+
+                                        <span class="infoTitle">
+                                            Teacher
+                                        </span>
+
+                                    </div>
+                                    <div style="text-transform: capitalize;" th:text="${teacherName}"
+                                         class="col-md-8 infoContentOrder noLeftPadding noRightPadding">
+
+                                    </div>
+                                </div>
+                                <div class="row infoRowOrder">
+                                    <div class="col-md-4 infoLogoName noLeftPadding">
+
+                                        <span class="infoTitle">
+                                            Field of Study
+                                        </span>
+
+                                    </div>
+                                    <div th:text="${className}"
+                                         class="col-md-8 infoContentOrder  noLeftPadding noRightPadding">
+
+                                    </div>
+                                </div>
+                                <div class="row infoRowOrder">
+                                    <div class="col-md-4 infoLogoName noLeftPadding">
+
+                                        <span class="infoTitle">
+                                            Class Type
+                                        </span>
+
+                                    </div>
+                                    <div class="col-md-8 infoContentOrder  noLeftPadding noRightPadding">
+                                        Individual
+                                    </div>
+                                </div>
+                                <div class="row infoRowOrder">
+                                    <div class="col-md-4 infoLogoName noLeftPadding">
+
+                                        <span class="infoTitle">
+                                            Number of Classes
+                                        </span>
+
+                                    </div>
+                                    <div class="col-md-8 numberOfClasses infoContentOrder noLeftPadding noRightPadding">
+
+                                    </div>
+                                </div>
+                                <div class="row infoRowOrder">
+                                    <div class="col-md-4 infoLogoName noLeftPadding">
+
+                                        <span class="infoTitle">
+                                            Location
+                                        </span>
+                                    </div>
+                                    <div class="col-md-8 infoContentOrder noLeftPadding noRightPadding">
+                                        At Teacher’s Place
+                                    </div>
+                                </div>
+                                <div class="row infoRowOrder">
+                                    <div class="col-md-4 infoLogoName noLeftPadding">
+
+                                        <span class="infoTitle">
+                                            Message
+                                        </span>
+                                    </div>
+                                    <div class="col-md-8 infoContentOrder lastinfoContentOrder noLeftPadding noRightPadding">
+                                        <textarea class="commentText" style="height: 200px;width: 100%;border: 1px solid grey;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mapCol noLeftPadding noRightPadding">
+                                <span class="mapTitle">
+                                    Map
+                                </span>
+                                <div class="mapDivClass">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d33111.09406324017!2d44.77846125597866!3d41.725010699918016!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sge!4v1493398316680"
+                                            width="100%" height="100%" frameborder="0" style="border:0"
+                                            allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footerLarge" style="padding-left: 4%;padding-right: 4%">
+    <div style="margin-right: auto;
+    margin-left: auto;">
+        <div class="row">
+            <div class="col-md-5">
+                <ul style="font-size: 18px;color:black;font-family:brix!important;margin-bottom: 0px;    padding-top: 2px;"
+                    class="list-inline footerLeft">
+                    <li>
+                        <a style="color: black">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a style="color: black">
+                            Terms & Conditions
+                        </a>
+                    </li>
+                    <li>
+                        <a style="color: black">
+                            Press
+                        </a>
+                    </li>
+                    <li>
+                        <a style="color: black">
+
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul  class="list-inline socialFoot">
+
+                    <li><a><i class="fa fa-facebook" aria-hidden="true"></i>
+
+                    </a></li>
+                    <li style=""><a><i class="fa fa-twitter" aria-hidden="true"></i>
+
+                    </a></li>
+                    <li><a><i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a></li>
+                    </a></li>
+
+                </ul>
+            </div>
+            <div class="col-md-5">
+                <ul class="list-inline quicklinks footerRight">
+                    <li><a href="#" style="font-family: font1"><i class="fa fa-cc-visa" aria-hidden="true"></i>
+                    </a>
+                    </li>
+                    <li><a href="#" style="font-family: font1"><i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="padding-top: 10px" class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <span style="font-family: brix!important;font-size: 1em">Copyright 2017 Allwitz</span>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="footerMin" style="padding-left: 4%;padding-right: 4%">
+    <div style="margin-right: auto;
+    margin-left: auto;">
+
+
+        <div style="padding-top: 10px" class="row">
+
+            <div class="col-xs-4">
+                <ul  class="list-inline socialFoot">
+
+                    <li><a><i class="fa fa-facebook" aria-hidden="true"></i>
+
+                    </a></li>
+                    <li style=""><a><i class="fa fa-twitter" aria-hidden="true"></i>
+
+                    </a></li>
+                    <li><a><i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a></li>
+                    </a></li>
+
+                </ul>
+            </div>
+            <div style="padding: 0;font-size: 10px;    padding-top: 3px;" class="col-xs-4">
+                <span style="font-family: brix!important;font-size: 1em">Copyright 2017 Allwitz</span>
+            </div>
+            <div class="col-xs-4">
+                <ul  class="list-inline socialFoot">
+
+                    <li><a><i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+
+                    </a></li>
+                    <li style=""><a><i class="fa fa-cc-visa" aria-hidden="true"></i>
+                    </a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="duration" style="display: none" th:text="${duration}"></div>
+<div id="price" style="display: none" th:text="${#numbers.formatDecimal(price, 0, 0)}"></div>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+<script src="/assets/js/bootstrap3-typeahead.js"></script>
+<script src="/page/files/isotope.pkgd.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="/js/jqBootstrapValidation.js"></script>
+<script src="/js/contact_me.js"></script>
+
+<script src="/assets/js/moment-with-locales.min.js"></script>
+<script src="/assets/js/functions/moment-timezone-with-data.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="/js/agency.min.js"></script>
+<script src="/assets/js/widgets/showModalWithTableInside.js"></script>
+<script src="assets/js/widgets/tableCreator.js"></script>
+<script src="/assets/js/widgets/dynamicCreateForm.js"></script>
+<script src="/assets/js/mainsite.js"></script>
+<script src="/assets/js/calendar.js"></script>
+<script src="/assets/js/order.js"></script>
+<script>
+
+
+</script>
+
+</body>
+</html>

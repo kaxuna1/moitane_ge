@@ -1,0 +1,109 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+
+.btn-search {
+    z-index: 1000;
+    border: 31px solid #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: linear 0.15s;
+    transition: linear 0.15s;
+    margin: auto;
+    display: block;
+    background: var(--main-color);
+    position: relative;
+    cursor: pointer;
+    -webkit-animation: size 1s linear alternate;
+    animation: size 1s linear alternate;
+}
+.btn-search:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 100%;
+    -webkit-animation: hide 1s linear;
+    animation: hide 1s linear;
+}
+.btn-search:before {
+    content: '';
+    width: 5px;
+    height: 15px;
+    left: -7px;
+    position: absolute;
+    top: 28px;
+    background: var(--main-color);
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    -webkit-transition: linear 0.15s;
+    transition: linear 0.15s;
+    -webkit-animation: mix 1s linear;
+    animation: mix 1s linear;
+}
+.btn-search:hover {
+    border-width: 10px;
+}
+.btn-search:hover:after {
+    opacity: 0;
+}
+.btn-search:hover:before {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: 35px;
+    left: -22px;
+    top: 70px;
+    width: 13px;
+    z-index: -1;
+}
+@-webkit-keyframes size {
+    25% ,75% {
+        border-width: 10px;
+    }
+}
+@keyframes size {
+    25% ,75% {
+        border-width: 10px;
+    }
+}
+@-webkit-keyframes hide {
+    25% ,75% {
+        opacity: 0;
+    }
+}
+@keyframes hide {
+    25% ,75% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes mix {
+    25% ,75% {
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        height: 35px;
+        left: -22px;
+        top: 70px;
+        width: 13px;
+        z-index: -1;
+    }
+}
+@keyframes mix {
+    25% ,75% {
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        height: 35px;
+        left: -22px;
+        top: 70px;
+        width: 13px;
+        z-index: -1;
+    }
+}

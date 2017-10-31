@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Avision</title>
+	<!-- Bootstrap implementation -->
+	<link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	<!-- GOOGLE FONTS -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
+	<!-- FONTELLO -->
+	<link href="font/fontello/css/fontello.css" rel="stylesheet" type="text/css" />
+	<link href="font/fontello/css/animation.css" rel="stylesheet" type="text/css" />
+	<!--if IE 7
+	link(rel='stylesheet', href='font/fontello/css/fontello-ie7.css')
+	-->
+	<!-- ANONYMOUS PRO FONT-->
+	<link href="http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700" rel="stylesheet" type="text/css" />
+	<!-- DRIPICONS -->
+	<link href="font/dripicons/webfont.css" rel="stylesheet" type="text/css" />
+	<!-- SIMPLE LINE ICONS -->
+	<link href="font/simple-line-icons/simple-line-icons.css" rel="stylesheet" type="text/css" />
+	<!-- THEMIFY ICONS -->
+	<link href="font/themify-icons/themify-icons.css" rel="stylesheet" type="text/css" />
+	<!-- FONTASTIC ICONS -->
+	<link href="font/fontastic/styles.css" rel="stylesheet" type="text/css" />
+	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+	<link href="css/extralayers.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="rs-plugin/css/settings.css" media="screen" rel="stylesheet" type="text/css" />
+	<!-- CarouFredSel -->
+	<link href="css/caroufredsel.css" rel="stylesheet" type="text/css" />
+	<!-- WOW.JS REVEAL ANIMATIONS -->
+	<link href="css/animate.css" rel="stylesheet" type="text/css" />
+	<!-- PYE CHART -->
+	<link href="css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" />
+	<!-- Hover Effect Ideas -->
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css' />
+	<link href="css/HoverEffectIdeas/css/demo.css" rel="stylesheet" type="text/css" />
+	<link href="css/HoverEffectIdeas/css/set1.css" rel="stylesheet" type="text/css" />
+	<!-- Lightcase ( image popup preview ) -->
+	<link href="plugins/lightcase/css/lightcase.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="removebullets">
+
+<!-- start preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- end preloader -->
+
+<!-- Navigation -->
+	<div class="navigation white">
+
+		<div class="container">
+			<div class="logo"><a href="index.html"><h1>Moitane.Ge</h1></a></div>
+
+			<div class="navbar navbar-default" role="navigation">
+				<div class="container-fluid relative">
+
+					<button type="button" class="btn left hide-show-button none">
+					    <span class="burgerbar"></span>
+					    <span class="burgerbar"></span>
+					    <span class="burgerbar"></span>
+					</button>
+					<a href="#" class="closemenu"></a> 
+
+					<!-- mobile version drop menu -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle hamburger" data-toggle="collapse" data-target=".navbar-collapse">
+						  <span class="sr-only">Toggle navigation</span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						</button>
+					</div>
+					
+					<!-- menu -->
+					<div class="mainmenu mobanim dark-menu navbar-collapse white collapse offset-0 ">
+						<ul class="nav navbar-nav mobpad">
+
+							<li class="dropdown static">
+							  <a class="dropdown-toggle" href="index.html">მთავარი <b class="caret"></b></a>
+
+							</li>
+							<li class="dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="#">მაღაზიები <b class="caret"></b></a>
+
+							</li>
+							<li><a href="contact.html">კონტაქტი</a></li>
+							<li class="dropdown static">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="#">შესვლა/რეგისტრაცია <b class="caret"></b></a>
+
+							</li>
+						</ul>
+					</div>
+				
+					<!-- shop/search -->
+					<div class="shopsearch navbar-collapse white collapsee offset-0 relative z1000">
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<div class="clearfix"></div>
+							</li>
+							<li class="dropdown basket basket-white"> 
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="ti-bag"></i><span class="active">1</span></a>
+							  <ul class="cart dropdown-menu">
+								<!-- <li class="transparent"><span class="cartip"></span></li> -->
+
+								<li class="itmhide">
+									<p class="size15 bold caps clightgrey">კალათი</p>
+									<div class="cartimage left">
+										<a href="#"><img src="images/noimage.jpg" alt=""/></a>
+									</div>
+									<p class="price">12.00 ლარი</p>
+									<a href="#" class="title">ძეხვი სალიამი</a>
+									<p class="quantity">რაოდენობა: 1</p>
+									<button type="button" class="close mt-30" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<button type="button"  class="close mt-30">&times;</button>
+								</li>
+								<li class="itmhide2">
+									<div class="noitems text-center none">კალათა ცარიელია</div>
+									<div class="total">
+										<p class="left size15 bold caps clightgrey">სულ:</p>
+										<p class="totalprice right">12.00 ლარი</p>
+										<div class="clearfix"></div>
+										<button class="btn cartbtn btn-default caps  left" type="submit">ვრცლად</button>
+										<button class="btn cartbtn btn-default caps  right" type="submit">გადახდა</button>
+										<div class="clearfix"></div>
+									</div>
+								</li>
+								
+							  </ul>
+							</li>
+							<li class="search"><a href="#" class="srclick flip"><i class="ti-search"></i></a></li>
+						</ul>
+					</div>	
+
+					<div class="dots">
+						<a href="#" class="opendots">
+							<span class="icon-dots"></span>
+							<span class="icon-dots"></span>
+							<span class="icon-dots"></span>
+						</a>
+					</div>			
+					
+				</div>
+			</div>		
+			
+		</div>
+	</div>
+
+	<!-- SEARCH -->	
+	<div class="fwsearch">
+		<div class="size30"><span class="escape">დააჭირეთ [ esc ] დახურვისთვის</span><a href="#" class="closesearch">+</a></div>
+		
+		<div class="csearch container">
+			<input type="email" class="form-control fwsearchfield" placeholder="ძებნა">
+			<button type="submit" class="btn fwsearchfieldbtn"><i class="ti-search"></i></button>
+		</div>
+
+
+	</div>
+<!-- End of Navigation -->			
+				
+<!--
+#################################
+	- THEMEPUNCH BANNER -
+#################################
+-->
+<!-- START REVOLUTION SLIDER 3.1 rev5 fullwidth mode -->
+<div id="parallax-off" class="tp-banner-container relative">
+	<div class="tp-banner">
+		<ul>
+
+			<!-- VIDEO  -->
+			<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-color="white">
+			
+				<!-- MAIN IMAGE -->
+				<img src="images/new/the-future-of-grocery-is-online_521810943_1536x1536_100_Standard.ashx.jpg"  alt="video_forest"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+				<!-- LAYERS -->
+
+				<!-- LAYER NR. 1 -->
+				<div class="tp-caption tp-fade fadeout fullscreenvideo"
+					data-x="0"
+					data-y="0"
+					data-speed="1000"
+					data-start="0"
+					data-easing="Power4.easeOut"
+					data-endspeed="1500"
+					data-endeasing="Power4.easeIn"
+					data-autoplay="true"
+					data-autoplayonlyfirsttime="false"
+					data-nextslideatend="true"
+					data-forceCover="1"
+					data-aspectratio="16:9"
+					data-forcerewind="on"
+					style="z-index: 2">
+
+
+				</div>
+
+				<!-- Filter maron -->
+				<div class="tp-caption "
+					 data-x="center"
+					 data-y="center"
+					 data-speed="600"
+					 data-start="0"
+					 data-easing="easeOut"  
+					 style="z-index: 4; display:block; background:rgba(102,102,51,0.1); width:100%; height:100%;"
+					 ></div>
+
+				<!-- Filter dark -->
+				<div class="tp-caption customin customout"
+					 data-x="center"
+					 data-y="center"
+
+					 data-customin="opacity:0;"
+					 data-customout="opacity:1;"
+					 data-speed="600"
+					 data-start="0"
+					 data-easing="easeOut"  
+					 style="z-index: 4; display:block; background:rgba(0,0,0,0.5); width:100%; height:100%;"
+					 ></div>
+
+				<!-- SCROLL -->
+				<div class="prlx-off tp-caption caption-white-bold-caps customin customout"
+					data-x="center"   data-voffset="-20"
+					data-y="bottom"   data-hoffset="0"	
+											
+					data-customin="opacity:0;"
+					data-customout="opacity:1;"
+					data-speed="500"
+					data-start="0"
+					data-easing="easeOut"  
+					style="z-index: 10;"
+					>
+					<div class=" rs-slideloop" 			
+					data-easing="Power3.easeInOut"
+					data-speed="0.5"
+					data-ys="-5"
+					data-ye="5"
+					data-xs="0"
+					data-xe="0"
+					>
+					<span class="ti-mouse size30 cwhite"></span>
+					</div>
+				</div>	
+
+				<!-- LAYER NR. 1 -->
+				<div class="prlx-on tp-caption slidertitle customin customout"
+					data-x="center"
+					data-y="center"
+					data-captionhidden="on"
+
+
+					data-splitin="words"
+					data-elementdelay="0.25"
+					data-start="200"
+					data-speed="600"
+					data-easing="Back.easeOut"
+					data-customin="x:0;y:-20;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+
+
+
+					data-frames="{ typ :lines;
+								 elementdelay :0.1;
+								 start:1650;
+								 speed:500;
+								 ease:Power3.easeOut;
+								 animation:x:0;y:-20;z:0;rotationX:00;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;
+								 },
+								 { typ :lines;
+								 elementdelay :0.1;
+								 start:2150;
+								 speed:500;
+								 ease:Power3.easeOut;
+								 animation:x:0;y:-40;z:0;rotationX:00;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;
+								 }
+								 "
+
+					data-splitout="words"
+					data-endelementdelay="0.1"
+					data-customout="x:0;y:0;z:0;rotationX:40;rotationY:70;rotationZ:0;scaleX:0.85;scaleY:0.85;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+					data-endspeed="500"
+					data-endeasing="Power4.easeIn"
+
+					style="z-index: 4">პროდუქტების მიტანის სერვისი
+				</div>
+
+				<div class="prlx-on tp-caption slidersubtitle customin customout"
+					data-x="center"   data-hoffset="0"
+					data-y="center"   data-voffset="30"
+
+					data-splitin=""
+					data-elementdelay=""
+					data-start="1600"
+					data-speed="600"
+					data-easing="Power3.easeOut"
+					data-customin="x:0;y:30;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+
+					data-frames="{ typ :lines;
+								 elementdelay :0.1;
+								 start:2150;
+								 speed:500;
+								 ease:Power3.easeOut;
+								 animation:x:0;y:-35;z:0;rotationX:00;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;
+								 }
+								 "
+
+					data-splitout="lines"
+					data-endelementdelay="0.1"
+					data-customout="x:-230;y:-20;z:0;rotationX:0;rotationY:0;rotationZ:90;scaleX:0.2;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%"
+					data-endspeed="500"
+
+					data-endeasing="Back.easeIn"
+					data-captionhidden="on"
+					style="z-index: 10">მიიღეთ სასურველი პროდუქტები 45 წუთში
+				</div>
+
+				<div class="prlx-on tp-caption  customin customout"
+					data-x="center"   data-voffset="80"	
+					data-y="center"   data-hoffset="0"
+
+					data-splitin=""
+					data-elementdelay=""
+					data-start="2150"
+					data-speed="600"
+					data-easing="Power3.easeOut"
+					data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 100%;"
+					
+					data-frames="{ 
+								 elementdelay :0.1;
+								 start:2150;
+								 speed:500;
+								 ease:Power3.easeOut;
+								 animation:x:0;y:-20;z:0;rotationX:00;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;
+								 }
+								 "
+
+					data-endelementdelay="0.1"
+					data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 100%;"
+					data-endspeed="500"
+				
+					data-endeasing="Back.easeIn"
+					data-captionhidden="on"
+					style="z-index: 10"><a href="#" class="btn btnwhiteline2 fontproximabold plr50 caps center" target="_blank">მაღაზიების ნახვა</a>
+				</div>
+			</li>
+
+			<!-- SLIDE 1  -->
+			<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-color="white">
+				<!-- MAIN IMAGE -->
+				<img src="images/new/5663254_orig.jpeg.jpg" alt=""  data-bgposition="left center" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="100" data-bgfitend="100" data-bgpositionend="center center">
+
+				<!-- LAYER 1 -->
+				<div class="prlx-on tp-caption slidertitle customin customout tp-resizeme"
+					data-x="center"  data-voffset="-50"
+					data-y="center"  data-hoffset="0"
+											
+					data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+					data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+					data-speed="500"
+					data-start="3500"
+					data-easing="Power3.easeInOut"
+					data-splitin="chars"
+					data-splitout="chars"
+					data-elementdelay="0.05"
+					data-endelementdelay="0.05"
+					data-endspeed="300"
+					style="z-index: 10;"
+					>შეუკვეთეთ ნებისმიერი რაოდენობა</div>
+				
+				<!-- LAYER 2 -->
+				<div class="prlx-on tp-caption slidersubtitle randomrotate customout tp-resizeme"
+					data-x="center"  data-voffset="0"		
+					data-y="center"  data-hoffset="0"	
+					
+					data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+					data-speed="500"
+					data-start="500"
+					data-easing="Power3.easeInOut"
+					data-splitin="chars"
+					data-splitout="chars"
+					data-elementdelay="0.05"
+					data-endelementdelay="0.05"						
+					data-endspeed="100"
+					style="z-index: 10;"
+					>შეკვეთა უმოკლეს დროში მოხვდება თქვენთან</div>
+				
+				<!-- LAYER 3 -->
+				<div class="prlx-on tp-caption caption-white-bold-caps  customin customout"
+					data-x="center"   data-voffset="80"	
+					data-y="center"   data-hoffset="0"
+				
+					data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+					data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+					data-speed="500"
+					data-start="5000"
+					data-easing="Back.easeOut"
+					data-endspeed="300"
+					data-endeasing="Back.easeIn"
+					style="z-index: 10;"
+					>
+					<div class="container rev-ct1">
+						<div class="col-md-6">
+							<a href="#" class="btn btnwhiteline2 fontproximabold plr40 caps rev-l">პროდუქტები</a>
+						</div>
+						<div class="col-md-6">
+							<a  href="#" class="btn btnwhiteline2 fontproximabold plr50 caps rev-r activate-tmprev">კონტაქტი</a>
+						</div>
+					</div>
+				</div>	
+
+				<!-- SCROLL -->
+				<div class="prlx-off tp-caption caption-white-bold-caps customin customout"
+					data-x="center"   data-voffset="-20"
+					data-y="bottom"   data-hoffset="0"	
+											
+					data-customin="opacity:0;"
+					data-customout="opacity:1;"
+					data-speed="500"
+					data-start="0"
+					data-easing="easeOut"  
+					style="z-index: 10;"
+					>
+					<div class=" rs-slideloop" 			
+					data-easing="Power3.easeInOut"
+					data-speed="0.5"
+					data-ys="-5"
+					data-ye="5"
+					data-xs="0"
+					data-xe="0"
+					>
+					<span class="ti-mouse size30 cwhite"></span>
+					</div>
+				</div>	
+
+				<!-- Filter dark -->
+				<div class="tp-caption customin customout"
+					 data-x="center"
+					 data-y="center"
+
+					 data-customin="opacity:0;"
+					 data-customout="opacity:1;"
+					 data-speed="600"
+					 data-start="0"
+					 data-easing="easeOut"  
+					 style="z-index: 4; display:block; background:rgba(0,0,0,0.5); width:100%; height:100%;"
+				></div>
+			</li>
+
+		</ul>
+		<div class="tp-bannertimer none"></div>
+	</div>
+</div>
+<!-- END REVOLUTION SLIDER -->
+
+<!-- 4 COLS -->
+<div class="bgwhite relative z100">
+	<div class="container">
+		<ul class="squares">
+			<li class="col-md-3 text-center">
+				<a href="#">
+					<i class="icon-location-1 size40"></i>
+					<h4 class="uppercase titlefont">მიტანის დრო</h4>
+					<p>თქვენი შეკვეთ 45 წუთში შესრულდება</p>
+				</a>
+			</li>
+			<li class="col-md-3 text-center">
+				<a href="#">
+					<i class="icon-params size40"></i>
+					<h4 class="uppercase titlefont">ადგილმდებარეობა</h4>
+					<p>პროდუქტებს თქვენთან უახლოესი მაღაზიიდან მიიღებთ</p>
+				</a>
+			</li>
+			<li class="col-md-3 text-center">
+				<a href="#">
+					<i class="icon-mobile-3 size40"></i>
+					<h4 class="uppercase titlefont">ჩაბარება</h4>
+					<p>პროდუქტები თქვენს კართან მოვა</p>
+				</a>
+			</li>
+			<li class="col-md-3 text-center">
+				<a href="#">
+					<i class="icon-lightbulb-1 size40"></i>
+					<h4 class="uppercase titlefont">ხარისხი</h4>
+					<p>გარანტირებული ხარისხი</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- End of 4 Cols -->
+
+<section ID="woodsection" class="hauto">
+	<div class="prlx-woodsection"></div>
+	<div class="container sspacing-title" >
+		<div class="row">
+			<h3 class="text-center caps pb20 cwhite titlefont">კატეგორიები</h3>
+
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.2s">
+				<div class="grid clearfix">
+					<figure class="effect-bubba3">
+						<img src="images/prods/mza.jpg" alt="img02"/>
+						<figcaption>
+							<h2 class="raleway size22"><span>მზა საჭმელი</span></h2>
+							<p>ახლად დამზადებული მზა საჭმელი</p>
+							<a href="#">მეტის ნახვა</a>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.0s">
+				<div class="grid clearfix">
+					<figure class="effect-bubba3">
+						<img src="images/prods/martskvi.jpg" alt="img02"/>
+						<figcaption>
+							<h2 class="raleway size22"><span>ხილი</span></h2>
+							<p>ქართული წარმოების ხილი</p>
+							<a href="#">მეტის ნახვა</a>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.4s">
+				<div class="grid clearfix">
+					<figure class="effect-bubba3">
+						<img src="images/prods/bost.jpg" alt="img02"/>
+						<figcaption>
+							<h2 class="raleway size22"><span>ბოსტნეული</span> </h2>
+							<p>ცოცხალი ბოსტნეული</p>
+							<a href="#">მეტის ნახვა</a>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.6s">
+					<div class="grid clearfix">
+						<figure class="effect-bubba3">
+							<img src="images/prods/xorc.jpg" alt="img02"/>
+							<figcaption>
+								<h2 class="raleway size24"> <span>ხორცი</span></h2>
+								<p>ქართული ხორცი</p>
+								<a href="#">მეტის ნახვა</a>
+							</figcaption>			
+						</figure>
+					</div>
+			</div>
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.0s">
+				<div class="grid clearfix">
+					<figure class="effect-bubba3">
+						<img src="images/prods/tevzi.jpg" alt="img02"/>
+						<figcaption>
+							<h2 class="raleway size22"><span>ზღვის პროდუქტები</span> </h2>
+							<p></p>
+							<a href="#">მეტის ნახვა</a>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.2s">
+				<div class="grid clearfix">
+					<figure class="effect-bubba3">
+						<img src="images/prods/rdze.jpg" alt="img02"/>
+						<figcaption>
+							<h2 class="raleway size22"><span>რძის პროდუქცია</span></h2>
+							<p></p>
+							<a href="#">მეტის ნახვა</a>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.4s">
+				<div class="grid clearfix">
+					<figure class="effect-bubba3">
+						<img src="images/prods/com.jpg" alt="img02"/>
+						<figcaption>
+							<h2 class="raleway size22"><span>ცომეული</span></h2>
+							<p></p>
+							<a href="#">მეტის ნახვა</a>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>
+			<div class="col-md-3 offset-0" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.6s">
+				<div class="grid clearfix">
+					<figure class="effect-bubba3">
+						<img src="images/prods/samel.jpg" alt="img02"/>
+						<figcaption>
+							<h2 class="raleway size22"><span>სასმელი</span></h2>
+							<p>უალკოჰოლო და სპირტიანი სასმელები</p>
+							<a href="#">მეტის ნახვა</a>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<button class="btn btnmaincolor caps center mt30" data-scroll-reveal="enter bottom over 0.5s and move 100px after 0.6s"><i class="icon-th mr10"></i>ყველა კატეგორია</button>
+		</div>
+	</div>
+</section>
+
+
+<!-- THE TEAM SECTION -->
+<div class="teamsection bgwhite relative z100 sspacing-title-button owhidden">
+	<div class="container">
+		<div class="row">
+			<h3 class="text-center caps pb30 titlefont">მაღაზიები</h3>
+			<div class="col-md-3" data-scroll-reveal="enter left over 1s and move 300px after 0.5s">
+				<div class="player offset-0" data-scrollreveal="enter left">
+					<h4 class="m15">Goodwill</h4>
+					<div class="teampicture">
+						<img src="images/logos/good.jpg" class="fwi dajy" alt=""/>
+						<div class="teamover"></div>
+						<p style="color: black;">ჰიპერმარკეტი</p>
+					</div>
+					<div class="socialiconswhite m20">
+						<ul>
+							<li class="blue"><a href="#"><i class="icon-facebook"></i></a></li>
+							<li class="lblue"><a href="#"><i class="icon-twitter-bird"></i></a></li>
+							<li class="orange"><a href="#"><i class="icon-gplus"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3" data-scroll-reveal="enter left over 1s and move 300px after 0.5s">
+				<div class="player offset-0" data-scrollreveal="enter left">
+					<h4 class="m15">Goodwill</h4>
+					<div class="teampicture">
+						<img src="images/logos/good.jpg" class="fwi dajy" alt=""/>
+						<div class="teamover"></div>
+						<p style="color: black;">ჰიპერმარკეტი</p>
+					</div>
+					<div class="socialiconswhite m20">
+						<ul>
+							<li class="blue"><a href="#"><i class="icon-facebook"></i></a></li>
+							<li class="lblue"><a href="#"><i class="icon-twitter-bird"></i></a></li>
+							<li class="orange"><a href="#"><i class="icon-gplus"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3" data-scroll-reveal="enter left over 1s and move 300px after 0.5s">
+				<div class="player offset-0" data-scrollreveal="enter left">
+					<h4 class="m15">Goodwill</h4>
+					<div class="teampicture">
+						<img src="images/logos/good.jpg" class="fwi dajy" alt=""/>
+						<div class="teamover"></div>
+						<p style="color: black;">ჰიპერმარკეტი</p>
+					</div>
+					<div class="socialiconswhite m20">
+						<ul>
+							<li class="blue"><a href="#"><i class="icon-facebook"></i></a></li>
+							<li class="lblue"><a href="#"><i class="icon-twitter-bird"></i></a></li>
+							<li class="orange"><a href="#"><i class="icon-gplus"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3" data-scroll-reveal="enter left over 1s and move 300px after 0.5s">
+				<div class="player offset-0" data-scrollreveal="enter left">
+					<h4 class="m15">Goodwill</h4>
+					<div class="teampicture">
+						<img src="images/logos/good.jpg" class="fwi dajy" alt=""/>
+						<div class="teamover"></div>
+						<p style="color: black;">ჰიპერმარკეტი</p>
+					</div>
+					<div class="socialiconswhite m20">
+						<ul>
+							<li class="blue"><a href="#"><i class="icon-facebook"></i></a></li>
+							<li class="lblue"><a href="#"><i class="icon-twitter-bird"></i></a></li>
+							<li class="orange"><a href="#"><i class="icon-gplus"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+			<div class="separator33" data-scroll-reveal="enter top over 1s and move 30px after 0.5s"></div>
+			
+
+			<div class="clearfix"></div>		
+			<p class="text-center caps"><a href="#" class="btn btnwhitehuge btn-default">ყველა მაღაზია</a></p>
+		</div>
+	</div>
+</div>
+<!-- END OF TEAM SECTION -->
+
+<!-- SECTION -->
+<!-- End of Facts -->
+
+<div class="separator100"></div>
+
+<!-- SECTION CONTACT -->
+<div class="">
+	<div class="container sspacing-title-button">
+		<div class="row">
+			<h3 class="text-center caps pb20 titlefont">კონტაქტი</h3>
+			<p class="text-center size30 mb10 pb20">გამოგვიგზვნეთ შეტყობინება</p>
+			
+			<div class="col-md-3">
+				<input type="text" class="form-control formlarge" placeholder="სახელი">
+				<input type="text" class="form-control formlarge mt17" placeholder="ელ.ფოსტა">
+				<input type="text" class="form-control formlarge mt17" placeholder="მობილური">
+			</div>
+			<div class="col-md-9">
+				<textarea class="form-control formstyle" rows="7" placeholder="შეტყობინება"></textarea>
+			</div>
+			<div class="clearfix"></div>
+			<button type="submit" class="btn btnwhitebig btn-default caps center mt30 wow pulse animated" data-wow-delay="0.4s" data-wow-duration="1s" data-wow-iteration="2"><i class="icon-mail"></i> გაგზავნა</button>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- END OF CONTACT -->
+
+<div class="separator100"></div>
+
+<!-- SECTION PARTNERS -->
+<div class="sspacing-title">
+	<div class="container text-center">
+		<h3 class="text-center caps titlefont pb10">პარტნიორები</h3>
+
+		<!-- CarouFredSel 4 -->
+		<div class="list_carousel4 responsive">
+			<ul id="foo4">
+				<li><img src="images/logos/good.png" alt=""/></li>
+				<li><img src="images/logos/good.png" alt=""/></li>
+				<li><img src="images/logos/good.png" alt=""/></li>
+				<li><img src="images/logos/good.png" alt=""/></li>
+				<li><img src="images/logos/good.png" alt=""/></li>
+				<li><img src="images/logos/good.png" alt=""/></li>
+				<li><img src="images/logos/good.png" alt=""/></li>
+				<li><img src="images/logos/good.png" alt=""/></li>
+			</ul>
+			<div class="clearfix"></div>
+			
+			<!--
+			
+			This enables more scrolling options and timer
+			
+			<div class="timer4"></div>
+			<a id="prev4" href="" class="">&#60;</a>
+			<a id="next4" href="" class="">&#62;</a>
+			<div class="pager4"></div>
+			-->
+		</div>
+		<!-- End of CarouFredSel 4 -->
+		
+	</div>
+</div>
+<!-- End of Section -->
+
+<!-- ADDRESS SECTION -->
+<section ID="sectionaddress-c" class="">
+	<div class="prlx-address"></div>
+	<div class="container pt180" >
+		
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-9 wow bounceInDown center animated" data-wow-delay="0.3s">
+			<h4>მიტანის სერვისი</h4>
+			<h1 class="titlefont size56">თბილისის მაშტაბით</h1>
+			<h4>დაგვიკავშირდით: 577344094</h4>
+		</div>
+		
+	</div>
+</section>
+<!-- End of Address -->
+
+<!-- FOOTER -->
+<div class="footer">
+	<div class="container ptb50 cwhite">
+		<div class="row">
+			<div class="col-md-3">
+				<h5 class="uppercase bold pb20 cwhite titlefont">ჩვენს შესახებ:</h5>
+				<p>ინფორმაცია ჩვენს შესახებ მოკლედ აღწერილი.</p>
+			</div>
+			<div class="col-md-3">
+				<h5 class="uppercase bold pb20 cwhite titlefont">საიტის რუკა</h5>
+				<ul>
+					<li><a href="#">მთავარი</a></li>
+					<li><a href="#">მაღაზიები</a></li>
+					<li><a href="#">პროდუქციის ტიპები</a></li>
+					<li><a href="#">კონტაქტი</a></li>
+					<li><a href="#">რეგისტრაცია/ავტორიზაცია</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<h5 class="uppercase bold pb20 cwhite titlefont">სიახლეები</h5>
+				<div id="twitter-feed" class="tweett"></div>
+			</div>
+			<div class="col-md-3">
+				<h5 class="uppercase bold pb20 cwhite titlefont">სიახლეების გამოწერა</h5>
+				<p>მიიღეთ სიახლეები ჩვენგან</p>
+				<input type="email" class="form-control newsletter" placeholder="ელ. ფოსტა">
+				<button type="submit" class="btn newsletterbtn"><i class="icon-mail"></i></button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="clearfix"></div>
+	<div class="separator100dark"></div>
+	
+	<div class="container ptb30 cwhite">
+		<a href="#">moitane.ge</a>
+		<div class="socialicons right">
+			<ul>
+				<li class="blue dgrey"><a href="#"><i class="icon-facebook"></i></a></li>
+				<li class="lblue lgrey"><a href="#"><i class="icon-twitter-bird"></i></a></li>
+				<li class="orange dgrey"><a href="#"><i class="icon-gplus"></i></a></li>
+				<li class="pink lgrey"><a href="#"><i class="icon-dribbble"></i></a></li>
+				<li class="red dgrey"><a href="#"><i class="icon-youtube"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End of Footer -->
+
+<p id="back-top"><a href="#top"><span class="ti-angle-up"></span></a></p>
+
+<div class="newsletter-ani">
+	<div class="circle-obj"></div>
+	<div class="circle-obj2"><span class="ti-check"></span></div>
+	<div class="circle-obj3 opensans xslim">Subscribed</div>
+</div>
+
+<!-- jQuery --> 
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<!-- COMPRESSED -->
+<script type="text/javascript" src="js/compressed.js"></script>
+
+<!-- Parallax & Animations -->
+<script type="text/javascript" src="js/animations.js"></script>
+
+<!-- FUNCTIONS -->
+<script type="text/javascript" src="js/functions.js"></script>
+
+<!-- Including all compiled Bootstrap plugins  --> 
+<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

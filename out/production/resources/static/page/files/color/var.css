@@ -1,0 +1,116 @@
+:root{
+    --main-color:rgb(238,156,172);
+}
+
+
+
+.brand-text {
+    color: var(--main-color) !important;
+}
+.custom-select-trigger {
+    background: transparent !important;;
+}
+
+.brand-text i {
+    color: var(--main-color) !important;
+}
+
+.brand-bg,
+.sweet-alert button {
+    background-color: var(--main-color) !important;
+}
+
+.waves-effect.waves-brand  {
+    background-color: var(--main-color);
+}
+
+.p-overlay {
+    background-color: var(--main-color);
+}
+
+
+.circle-loader .path {
+    stroke: var(--main-color);
+}
+
+
+.side-nav  li.current a,
+.side-nav  li a:hover {
+    border-bottom-color: var(--main-color);
+}
+
+.static-menu li i:hover,
+.static-menu li a:hover,
+.submenu-ul li a:hover,
+.home-title span,
+.about-subtitle,
+.person-about > a.btn-large,
+.about-social ul li a i,
+.skill-title,
+.skill-count,
+.single-widget ul li a,
+.single-post-content a,
+.share-post li a:hover,
+.com-title a,
+span.num {
+    color: var(--main-color);
+}
+
+.singel-hr-inner,
+.hr-wrap,
+.hrc:after,
+.thumb-slides-container.owl-theme .owl-controls .owl-page.active span,
+.blog-inner .card-content a.right:hover,
+.blog-inner .card-content a.right:focus,
+.contact-form .submit-btn:hover,
+.contact-form .submit-btn:focus,
+a.tags,
+.blog-inner .card-content a.right:active {
+    background-color: var(--main-color);
+}
+
+.contact-form .materialize-textarea:focus,
+.contact-form .input-box:focus {
+    border-color: var(--main-color);
+    box-shadow: 0px 1px 0px var(--main-color);
+}
+
+
+.single-post-content blockquote {
+    border-left: 5px solid var(--main-color);
+}
+
+
+
+@-webkit-keyframes color {
+    0%   {stroke: var(--main-color);}
+    20%  {stroke: var(--main-color);}
+    25%  {stroke: var(--main-color);}
+    45%  {stroke: var(--main-color);}
+    50%  {stroke: var(--main-color);}
+    70%  {stroke: var(--main-color);}
+    75%  {stroke: var(--main-color);}
+    95%  {stroke: var(--main-color);}
+}
+
+@keyframes color {
+    0%   {stroke: var(--main-color);}
+    20%  {stroke: var(--main-color);}
+    25%  {stroke: var(--main-color);}
+    45%  {stroke: var(--main-color);}
+    50%  {stroke: var(--main-color);}
+    70%  {stroke: var(--main-color);}
+    75%  {stroke: var(--main-color);}
+    95%  {stroke: var(--main-color);}
+}
+
+
+/* Add your CSS below */
+
+
+
+
+.menu-select [type="radio"]:checked + label:after {
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+}
