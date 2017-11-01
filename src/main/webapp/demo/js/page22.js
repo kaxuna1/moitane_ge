@@ -427,6 +427,10 @@ jQuery(document).ready(function($){
 		}
 	}
 
+    $("#filtersClick").click(function() {
+
+        $('.cd-dropdown-trigger').click();
+    });
 	//IE9 placeholder fallback
 	//credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
 	if(!Modernizr.input.placeholder){
@@ -450,4 +454,6 @@ jQuery(document).ready(function($){
 		  	})
 		});
 	}
+
+
 });
