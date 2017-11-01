@@ -30,6 +30,5 @@ gradlew.bat
 out
 
 androidApp/Allwitz/app/libs/
-plugins/
 /src/main/resources/static/assets/plugins/
 design/allwitz/__MACOSX/
