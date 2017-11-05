@@ -49,6 +49,17 @@
 </head>
 <body class="bglight">
 
+<script>
+	$(document).ready(function () {
+		var template = "<li class=\"itmhide\">\n    <div class=\"cartimage left\">\n        <a href=\"#\"><img src=\"images/noimage.jpg\" alt=\"\"/></a>\n    </div>\n    <p class=\"price\">12.00 ლარი</p>\n    <a href=\"#\" class=\"title\">ძეხვი სალიამი</a>\n    <p class=\"quantity\">რაოდენობა: 1</p>\n    <button type=\"button\" class=\"close mt-30\" data-dismiss=\"alert\"\n            aria-hidden=\"true\">&times;\n    </button>\n    <button type=\"button\" class=\"close mt-30\">&times;</button>\n</li>";
+
+		$(".btnaddtocart").click(function () {
+            $("#cartName").after(template)
+        })
+
+
+    })
+</script>
 <!-- start preloader -->
 <div id="preloader">
     <div id="status">&nbsp;</div>
@@ -141,24 +152,24 @@
 								<ul class="cart dropdown-menu">
 									<!-- <li class="transparent"><span class="cartip"></span></li> -->
 
-									<li class="itmhide">
-										<p class="size15 bold caps clightgrey">კალათი</p>
-										<div class="cartimage left">
-											<a href="#"><img src="images/noimage.jpg" alt=""/></a>
-										</div>
-										<p class="price">12.00 ლარი</p>
-										<a href="#" class="title">ძეხვი სალიამი</a>
-										<p class="quantity">რაოდენობა: 1</p>
-										<button type="button" class="close mt-30" data-dismiss="alert"
-												aria-hidden="true">&times;
-										</button>
-										<button type="button" class="close mt-30">&times;</button>
-									</li>
+									<p id="cartName" class="size15 bold caps clightgrey">კალათი</p>
+                                    <li class="itmhide">
+                                        <div class="cartimage left">
+                                            <a href="#"><img src="images/noimage.jpg" alt=""/></a>
+                                        </div>
+                                        <p class="price">12.00 ლარი</p>
+                                        <a href="#" class="title">ძეხვი სალიამი</a>
+                                        <p class="quantity">რაოდენობა: 1</p>
+                                        <button type="button" class="close mt-30" data-dismiss="alert"
+                                                aria-hidden="true">&times;
+                                        </button>
+                                        <button type="button" class="close mt-30">&times;</button>
+                                    </li>
 									<li class="itmhide2">
 										<div class="noitems text-center none">კალათა ცარიელია</div>
 										<div class="total">
 											<p class="left size15 bold caps clightgrey">სულ:</p>
-											<p class="totalprice right">12.00 ლარი</p>
+											<p class="totalprice right">0</p>
 											<div class="clearfix"></div>
 											<button class="btn cartbtn btn-default caps  left" type="submit">ვრცლად
 											</button>
@@ -229,9 +240,8 @@
 		<div class="coll1 zthumbs">
 			<ul class="zoomthumbs">
 				<li><img src='images/prods/xorc2.jpeg' alt=""/></li>
-				<li><img src='images/prods/xorc2.jpeg' alt=""/></li>
-				<li><img src='images/prods/xorc2.jpeg' alt=""/></li>
-				<li><img src='images/prods/xorc2.jpeg' alt=""/></li>
+				<li><img src='images/prods/xorc3.jpg' alt=""/></li>
+				<li><img src='images/prods/xorc4.jpg' alt=""/></li>
 			</ul>
 		</div>
 		<div id='ex1' class='coll2 zoom'>
