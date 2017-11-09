@@ -102,6 +102,40 @@ $(document).ready(function () {
                         loadCategoriesData(0, "");
                     });
                     break;
+                case "store_management":
+                    navigation.append('<li id="loadStoresButton" class="k">' +
+                        '<a href="#"><i class="icon-picture"></i><span data-translate="'+strings["store_management_button"]+'">'
+                        +strings["store_management_button"]+'</span></a></li>');
+                    $("#loadStoresButton").click(function () {
+                        $(".k").attr("class", "k");
+                        $(this).attr("class", "k nav-active active");
+                        $("#searchparams").html("");
+                        if (datarowSlide) {
+                            $("#dataRow").slideDown("slow");
+                            $("#dashRow").slideUp("slow");
+                            datarowSlide = true;
+                        }
+                        loadStores(0, "");
+                    });
+                    break;
+                    break;
+                case "product_type":
+                    navigation.append('<li id="loadProductTypes" class="k">' +
+                        '<a href="#"><i class="icon-picture"></i><span data-translate="'+strings["product_types_menu_label"]+'">'
+                        +strings["product_types_menu_label"]+'</span></a></li>');
+                    $("#loadProductTypes").click(function () {
+                        $(".k").attr("class", "k");
+                        $(this).attr("class", "k nav-active active");
+                        $("#searchparams").html("");
+                        if (datarowSlide) {
+                            $("#dataRow").slideDown("slow");
+                            $("#dashRow").slideUp("slow");
+                            datarowSlide = true;
+                        }
+                        loadProductTypes(0, "");
+                    });
+                    break;
+                    break;
                 case "dashboard":
                     navigation.append('<li id="loadDashboardButton" class="k">' +
                         '<a href="#">' +

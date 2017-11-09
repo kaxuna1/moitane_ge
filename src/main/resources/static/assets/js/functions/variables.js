@@ -43,6 +43,8 @@ var infoTypes = {
 
 var clientColumns = ["სახელი", "გვარი", "პირადი ნომერი", "საკონტაქტო ნომერი", "სესხების რაოდენობა"];
 var categoryColumns = [strings["admin_label_name"], strings["admin_label_action"]];
+var storeColumns = [strings["store_name_column"]];
+var productTypeColumns = [strings["product_type_column_name"]];
 var elementColumns = ["კოდი", 'სახელი'];
 var regionColumns = ["სახელი"];
 var projectStageTypeColumns = ["სახელი"];
