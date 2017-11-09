@@ -59,6 +59,8 @@ function loadUsersData(index, search,forAccept) {
             strings["admin_button_newuser"] + '</button>');
         $("#addNewButton").click(function () {
             showModalWithTableInside(function (head, body, modal) {
+
+
                 dynamicCreateForm(body, "/createuser", {
                     name: {
                         name: strings["admin_label_name"],

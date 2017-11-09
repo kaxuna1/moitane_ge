@@ -35,6 +35,7 @@ public class ProductSubType {
         this.active = true;
         this.createDate = new Date();
     }
+    public ProductSubType(){}
 
     public long getId() {
         return id;

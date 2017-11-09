@@ -57,6 +57,8 @@ function loadProductTypes(index, search) {
                 })
             })
         });
+
+
         var gridRow=$('.gridRow');
         gridRow.css('cursor', 'pointer');
         gridRow.unbind();
@@ -83,6 +85,7 @@ function loadProductTypes(index, search) {
 
 
 
+                drawSubTypes(DOMElements,0)
 
 
 
@@ -98,8 +101,38 @@ function loadProductTypes(index, search) {
     });
 
     function drawSubTypes(DOMElements,index) {
-        $.getJSON("/productSubTypes/"+DOMElements.currentElement.id+"/"+index,function (result) {
 
+        DOMElements.subTypes.html("");
+        createButtonWithHandlerr(DOMElements.subTypes,'დამატება',function () {
+           showModalWithTableInside(function (head, body, modal, rand) {
+               dynamicCreateForm(body,"/createSubType",{
+                   type:{
+                       type:"hidden",
+                       value:DOMElements.currentElement.id
+                   },
+                   name:{
+                       name:strings.admin_label_name,
+                       type:"text"
+                   }
+               },function () {
+                   modal.modal("hide");
+                   drawSubTypes(DOMElements,0)
+               })
+           },{},400)
+        });
+
+        $.getJSON("/productSubTypes/"+DOMElements.currentElement.id+"/"+index,function (result) {
+            createTable(DOMElements.subTypes,{
+                name:{
+                    name:"name"
+                }
+            },function (table) {
+                var data = result["content"];
+                for(key in data){
+                    var item = data[key];
+                    table.append("<tr><td>"+item.name+"</td></tr>")
+                }
+            })
         })
     }
 

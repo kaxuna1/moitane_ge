@@ -41,9 +41,17 @@ open class StoreController (val sessionRepository: SessionRepository,
         return storeRepo.findAll(constructPageSpecification(index,10))
     }
 
+    @RequestMapping("getStores")
+    @ResponseBody
+    open fun getStoresAll(@PathVariable("index")index:Int):Any{
+        return storeRepo.findAll(constructPageSpecification(index,10))
+    }
+
+
 
     private fun constructPageSpecification(pageIndex: Int, size: Int): Pageable {
         return PageRequest(pageIndex, size)
     }
 
 }
+

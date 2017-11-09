@@ -83,6 +83,7 @@ function dynamicCreateForm(div, url, data, callback) {
         if (valid) {
             $.ajax({
                 url: url,
+                method:"POST",
                 data: sendData
             }).done(function (result) {
                 //TODO ეტაპების განახლება ახლის შექმნის შემდეგ

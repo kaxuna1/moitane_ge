@@ -2,6 +2,7 @@ package com.technonet.Repository;
 
 import com.technonet.model.ProductSubType;
 import com.technonet.model.ProductType;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,5 +12,5 @@ public interface ProductSubTypeRepo extends JpaRepository<ProductSubType,Long> {
 
 
 
-    List<ProductSubType> findByProductTypeAndActive(ProductType productType, boolean active, Pageable constructPageSpecification);
+    Page<ProductSubType> findByProductTypeAndActive(ProductType productType, boolean active, Pageable constructPageSpecification);
 }
