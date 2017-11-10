@@ -9,6 +9,7 @@ function dynamicCreateForm(div, url, data, callback) {
     div.append("<div id='div" + random + "" + random2 + "'></div>");
     div = div.find("#div" + random + "" + random2);
 
+    var updatersFunc = {};
     console.log(data);
     for (key in data) {
         var element = data[key];
@@ -64,7 +65,8 @@ function dynamicCreateForm(div, url, data, callback) {
             if (element.data)
                 OuterFuncLocalData(localKey, localValueField, localNameField, random, element, element.data);
             else
-                OuterFunc(localKey, localValueField, localNameField, random, element, element.IdToNameMap);
+                OuterFunc(localKey, localValueField, localNameField, random, element, element.IdToNameMap,updatersFunc);
+
         }
     }
     div.append("<button class='btn' id='save" + random + "'>" + strings["admin_button_save"] + "</button>");
@@ -83,7 +85,7 @@ function dynamicCreateForm(div, url, data, callback) {
         if (valid) {
             $.ajax({
                 url: url,
-                method:"POST",
+                method: "POST",
                 data: sendData
             }).done(function (result) {
                 //TODO ეტაპების განახლება ახლის შექმნის შემდეგ
@@ -100,7 +102,11 @@ function dynamicCreateForm(div, url, data, callback) {
         callback();
         div.remove();
     })
+    for (key in updatersFunc){
+        updatersFunc[key]()
+    }
 }
+
 function dynamicCreateToArray(div, array, data, callback, afterDraw, beforeDelete) {
     var random = Math.floor((Math.random() * 10000) + 1);
     var random2 = Math.floor((Math.random() * 10000) + 1);
@@ -185,6 +191,7 @@ function dynamicCreateToArray(div, array, data, callback, afterDraw, beforeDelet
         afterDraw();
     }
 }
+
 function dynamicChooserToCallback(div, data, callback, afterDraw, beforeDelete) {
 
     var random = Math.floor((Math.random() * 10000) + 1);
@@ -261,20 +268,64 @@ function dynamicChooserToCallback(div, data, callback, afterDraw, beforeDelete) 
         afterDraw();
     }
 }
-function OuterFunc(localKey, localValueField, localNameField, random, element, IdToNameMap) {
-    $.getJSON(element.url, function (result) {
-        console.log(result);
-        console.log(localKey);
-        for (key2 in result) {
-            if (IdToNameMap) {
-                IdToNameMap[result[key2][localValueField]] = result[key2][localNameField];
-            }
-            $("#" + localKey + random + "").append('<option value="' + result[key2][localValueField] + '">' +
-                result[key2][localNameField] + '</option>')
+
+function OuterFunc(localKey, localValueField, localNameField, random, element, IdToNameMap,updatersFunc) {
+
+
+    if(element.depends){
+        updatersFunc[element.depends.field] = function () {
+            $("#" + localKey + random + "").html("");
+            var url = element.url;
+            if(element.depends){
+                  url+=element.depends.urlTemplate.replaceAll("{"+element.depends.field+"}",$("#"+element.depends.field+random+"").val())
+              }
+            $.getJSON(url, function (result) {
+                console.log(result);
+                console.log(localKey);
+                for (key2 in result) {
+                    if (IdToNameMap) {
+                        IdToNameMap[result[key2][localValueField]] = result[key2][localNameField];
+                    }
+                    $("#" + localKey + random + "").append('<option value="' + result[key2][localValueField] + '">' +
+                        result[key2][localNameField] + '</option>')
+                }
+                $("#" + localKey + random + "").select2();
+                $("#" + localKey + random + "").change(function () {
+                    if(updatersFunc[localKey])
+                        updatersFunc[localKey]();
+                })
+            })
         }
-        $("#" + localKey + random + "").select2();
-    })
+
+    }else{
+        $("#" + localKey + random + "").html("");
+        var url = element.url;
+      /*  if(element.depends){
+            debugger;
+            url+=element.depends.urlTemplate.replaceAll("{"+element.depends.field+"}",$("#"+element.depends.field+random+"").val())
+        }*/
+        $.getJSON(url, function (result) {
+            console.log(result);
+            console.log(localKey);
+            for (key2 in result) {
+                if (IdToNameMap) {
+                    IdToNameMap[result[key2][localValueField]] = result[key2][localNameField];
+                }
+                $("#" + localKey + random + "").append('<option value="' + result[key2][localValueField] + '">' +
+                    result[key2][localNameField] + '</option>')
+            }
+            $("#" + localKey + random + "").select2();
+            $("#" + localKey + random + "").change(function () {
+                if(updatersFunc[localKey])
+                    updatersFunc[localKey]();
+            })
+        })
+    }
+
+
+
 }
+
 function OuterFuncLocalData(localKey, localValueField, localNameField, random, element, result) {
     for (key2 in result) {
         $("#" + localKey + random + "").append('<option value="' + result[key2][localValueField] + '">' +

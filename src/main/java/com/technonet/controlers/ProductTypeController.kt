@@ -86,10 +86,10 @@ open class ProductTypeController(val productTypeRepo: ProductTypeRepo,
     open fun type():Any{
         return productTypeRepo.findByActive(true);
     }
-    @RequestMapping("/subTypes")
+    @RequestMapping("/subTypes/{id}")
     @ResponseBody
-    open fun type():Any{
-        return productTypeRepo.findByActive(true);
+    open fun subType(@PathVariable("id")id:Long):Any{
+        return productSubTypeRepo.findByActiveAndProductType(true,productTypeRepo.findOne(id));
     }
 
 

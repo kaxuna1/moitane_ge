@@ -57,14 +57,18 @@ function loadStoreProducts(index, search) {
                         type: "comboBox",
                         valueField: "id",
                         nameField: "name",
-                        url: "/stores"
+                        url: "/types"
                     },
                     subType: {
                         name: strings["store_product_sub_type"],
                         type: "comboBox",
                         valueField: "id",
                         nameField: "name",
-                        url: "/stores"
+                        url: "/subTypes",
+                        depends:{
+                            field:"type",
+                            urlTemplate:"/{type}"
+                        }
                     },
                     price: {
                         name: strings["store_product_price"],

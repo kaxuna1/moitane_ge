@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*
 @Controller
 @Transactional
 open class StoreProductController(val sessionRepository: SessionRepository,
-                                  val productRepo: StoreProductController,
+                                  val productRepo: StoreProductRepo,
                                   val productSubTypeRepo: ProductSubTypeRepo,
                                   val productTypeRepo: ProductTypeRepo,
                                   val storeRepo: StoreRepo,
