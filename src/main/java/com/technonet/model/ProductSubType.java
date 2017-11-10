@@ -4,7 +4,9 @@ package com.technonet.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "ProductSubType")
@@ -29,11 +31,15 @@ public class ProductSubType {
     @JsonIgnore
     private ProductType productType;
 
+    @OneToMany(mappedBy = "productSubType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<StoreProduct> storeProducts;
+
     public ProductSubType(String name, ProductType productType) {
         this.name = name;
         this.productType = productType;
         this.active = true;
         this.createDate = new Date();
+        this.storeProducts = new ArrayList<>();
     }
     public ProductSubType(){}
 
@@ -75,5 +81,13 @@ public class ProductSubType {
 
     public void setProductType(ProductType productType) {
         this.productType = productType;
+    }
+
+    public List<StoreProduct> getStoreProducts() {
+        return storeProducts;
+    }
+
+    public void setStoreProducts(List<StoreProduct> storeProducts) {
+        this.storeProducts = storeProducts;
     }
 }

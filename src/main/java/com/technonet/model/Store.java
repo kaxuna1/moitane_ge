@@ -1,7 +1,10 @@
 package com.technonet.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Store")
@@ -22,6 +25,13 @@ public class Store {
 
     @Column
     private boolean active;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<User> users;
+    @JsonIgnore
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<StoreProduct> storeProducts;
 
     public Store(String name) {
         this.name = name;
@@ -68,5 +78,21 @@ public class Store {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public List<StoreProduct> getStoreProducts() {
+        return storeProducts;
+    }
+
+    public void setStoreProducts(List<StoreProduct> storeProducts) {
+        this.storeProducts = storeProducts;
     }
 }

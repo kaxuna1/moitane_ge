@@ -116,13 +116,17 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "cityId")
     private City city;
+    @ManyToOne
+    @JoinColumn(name = "storeId")
+    private Store store;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<InfoRecord> infoRecords;
 
 
-
+    @OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<StoreProduct> storeProducts;
 
 
 
@@ -157,6 +161,7 @@ public class User {
         this.infoRecords = new ArrayList<>();
         this.ratings = new ArrayList<>();
         this.about="";
+        this.storeProducts = new ArrayList<>();
 
 
     }
@@ -200,6 +205,7 @@ public class User {
         this.googleId = "";
         this.about = "";
         this.ratings = new ArrayList<>();
+        this.storeProducts = new ArrayList<>();
     }
 
 
@@ -485,5 +491,21 @@ public class User {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public List<StoreProduct> getStoreProducts() {
+        return storeProducts;
+    }
+
+    public void setStoreProducts(List<StoreProduct> storeProducts) {
+        this.storeProducts = storeProducts;
     }
 }

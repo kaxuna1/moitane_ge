@@ -48,24 +48,8 @@ $(document).ready(function () {
                         }
                         loadUsersData(0, "",2);
                     });
+                    loadUsersData(0, "",1);
 
-
-                    break;
-                case "orders":
-                    navigation.append('<li id="loadordersButton" class="k">' +
-                        '<a href="#"><i class="icon-picture"></i><span data-translate="'+strings["admin_menu_orders"]+'">'
-                        +strings["admin_menu_orders"]+'</span></a></li>');
-                    $("#loadordersButton").click(function () {
-                        $(".k").attr("class", "k");
-                        $(this).attr("class", "k nav-active active");
-                        $("#searchparams").html("<div id='dynamicFilterRow' class='row'> </div>");
-                        if (datarowSlide) {
-                            $("#dataRow").slideDown("slow");
-                            $("#dashRow").slideUp("slow");
-                            datarowSlide = true;
-                        }
-                        loadOrders(0, "");
-                    });
                     break;
                 case "strings":
                     navigation.append('<li id="loadTextsButton" class="k">' +
@@ -85,22 +69,6 @@ $(document).ready(function () {
                     break;
                 case "payments":
 
-                    break;
-                case "categories":
-                    navigation.append('<li id="loadCategoriesButton" class="k">' +
-                        '<a href="#"><i class="icon-picture"></i><span data-translate="'+strings["admin_menu_categories"]+'">'
-                        +strings["admin_menu_categories"]+'</span></a></li>');
-                    $("#loadCategoriesButton").click(function () {
-                        $(".k").attr("class", "k");
-                        $(this).attr("class", "k nav-active active");
-                        $("#searchparams").html("");
-                        if (datarowSlide) {
-                            $("#dataRow").slideDown("slow");
-                            $("#dashRow").slideUp("slow");
-                            datarowSlide = true;
-                        }
-                        loadCategoriesData(0, "");
-                    });
                     break;
                 case "store_management":
                     navigation.append('<li id="loadStoresButton" class="k">' +
@@ -135,34 +103,14 @@ $(document).ready(function () {
                         loadProductTypes(0, "");
                     });
                     break;
-                    break;
-                case "dashboard":
-                    navigation.append('<li id="loadDashboardButton" class="k">' +
-                        '<a href="#">' +
-                        '<i class="icon-graph"></i> ' +
-                        '<span style="font-family: font1;" data-translate="'+strings["admin_menu_dashboard"]+'">'+
-                        strings["admin_menu_dashboard"]+'</span></a></li>');
-                    $("#loadDashboardButton").click(function () {
-                        $(".k").attr("class", "k");
-                        $(this).attr("class", "k nav-active active");
-                        $("#searchparams").html("");
-                        $("#dataRow").slideUp("slow");
-                        $("#dashRow").slideDown("slow");
-                        datarowSlide = true;
-                        dashRow = true;
-                        DashInit();
-
-                    });
-                    break;
                 default:
 
                     break;
-
             }
 
 
         }
-        loadUsersData(0, "",1);
+
 
     });
 

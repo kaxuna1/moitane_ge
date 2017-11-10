@@ -45,6 +45,7 @@ var clientColumns = ["სახელი", "გვარი", "პირად�
 var categoryColumns = [strings["admin_label_name"], strings["admin_label_action"]];
 var storeColumns = [strings["store_name_column"]];
 var productTypeColumns = [strings["product_type_column_name"]];
+var storeProductColumns = [strings["store_product_name"],strings["store_product_type"],strings["store_product_sub_type"],strings["store_product_price"]];
 var elementColumns = ["კოდი", 'სახელი'];
 var regionColumns = ["სახელი"];
 var projectStageTypeColumns = ["სახელი"];

@@ -27,12 +27,16 @@ public class ProductType {
     @OneToMany(mappedBy = "productType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ProductSubType> productSubTypes;
 
+    @OneToMany(mappedBy = "productType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<StoreProduct> storeProducts;
+
 
     public ProductType(String name) {
         this.name = name;
         this.active = true;
         this.createDate = new Date();
         this.productSubTypes = new ArrayList<>();
+        this.storeProducts = new ArrayList<>();
     }
     public ProductType(){
 
@@ -76,5 +80,13 @@ public class ProductType {
 
     public void setProductSubTypes(List<ProductSubType> productSubTypes) {
         this.productSubTypes = productSubTypes;
+    }
+
+    public List<StoreProduct> getStoreProducts() {
+        return storeProducts;
+    }
+
+    public void setStoreProducts(List<StoreProduct> storeProducts) {
+        this.storeProducts = storeProducts;
     }
 }

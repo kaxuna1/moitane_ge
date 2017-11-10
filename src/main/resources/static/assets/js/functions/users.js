@@ -77,6 +77,13 @@ function loadUsersData(index, search,forAccept) {
                         nameField: "name",
                         url: "/cities"
                     },
+                    store: {
+                        name: strings["admin_label_store"],
+                        type: "comboBox",
+                        valueField: "id",
+                        nameField: "name",
+                        url: "/stores"
+                    },
                     username: {
                         name: strings["admin_label_username"],
                         type: "text"

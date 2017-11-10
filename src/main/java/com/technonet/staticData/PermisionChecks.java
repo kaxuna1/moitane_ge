@@ -81,6 +81,12 @@ public class PermisionChecks {
                 .filter(permission -> permission.getCode().equals(PERMISSIONS.student.name()))
                 .count() > 0;
     }
+    public static boolean storeProductManagement(Session session) {
+        return session.isIsactive() && session.getUser()
+                .getPermissions().stream()
+                .filter(permission -> permission.getCode().equals(PERMISSIONS.store_product_management.name()))
+                .count() > 0;
+    }
     public static boolean teacher(Session session) {
         return session.isIsactive() && session.getUser()
                 .getPermissions().stream()

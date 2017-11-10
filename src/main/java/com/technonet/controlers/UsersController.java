@@ -52,6 +52,7 @@ public class UsersController {
                               @RequestParam(value = "mobile", required = false, defaultValue = "") String mobile,
                               @RequestParam(value = "personalNumber", required = false, defaultValue = "") String personalNumber,
                               @RequestParam(value = "city", required = false, defaultValue = "0") long city,
+                              @RequestParam(value = "store", required = false, defaultValue = "0") long store,
                               @RequestParam(value = "sex", required = false, defaultValue = "0") int sex) {
 
 
@@ -69,6 +70,7 @@ public class UsersController {
                 .setCity(cityRepo.findOne(city))
                 .createUser();
         user.setSex(sex);
+        user.setStore(storeRepo.findOne(store));
         try {
             userDao.save(user);
         } catch (Exception ex) {
@@ -409,4 +411,6 @@ public class UsersController {
     private CountryRepo countryRepo;
     @Autowired
     private InfoRecordRepo infoRecordRepo;
+    @Autowired
+    private StoreRepo storeRepo;
 }

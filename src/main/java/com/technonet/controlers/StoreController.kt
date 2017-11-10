@@ -40,6 +40,11 @@ open class StoreController (val sessionRepository: SessionRepository,
     open fun getStores(@PathVariable("index")index:Int):Any{
         return storeRepo.findAll(constructPageSpecification(index,10))
     }
+    @RequestMapping("/stores")
+    @ResponseBody
+    open fun stores():Any{
+        return storeRepo.findByActive(true)
+    }
 
     @RequestMapping("getStores")
     @ResponseBody

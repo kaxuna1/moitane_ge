@@ -11,5 +11,7 @@ public enum PERMISSIONS {
     categories,docTypes,
     gallery,scheduling,
     categoryConfirmation,
-    orders,strings
+    orders,strings,
+    store_management,product_type,
+    store_product_management
 }

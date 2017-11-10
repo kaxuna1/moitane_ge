@@ -81,6 +81,18 @@ open class ProductTypeController(val productTypeRepo: ProductTypeRepo,
 
 
 
+    @RequestMapping("/types")
+    @ResponseBody
+    open fun type():Any{
+        return productTypeRepo.findByActive(true);
+    }
+    @RequestMapping("/subTypes")
+    @ResponseBody
+    open fun type():Any{
+        return productTypeRepo.findByActive(true);
+    }
+
+
     private fun constructPageSpecification(pageIndex: Int, size: Int): Pageable {
         return PageRequest(pageIndex, size)
     }

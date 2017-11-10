@@ -23,7 +23,6 @@ nbdist/
 .nb-gradle/
 .gitignore
 
-
 gradle/
 gradlew
 gradlew.bat

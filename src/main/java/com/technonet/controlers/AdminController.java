@@ -35,7 +35,7 @@ public class AdminController {
 
         if(sessionId!=0){
             Session session=sessionRepository.findOne(sessionId);
-            if(session.isIsactive()&& isAdmin(session.getUser())){
+            if(session.isIsactive()&& (isAdmin(session.getUser())||storeProductManagement(session))){
                 model.addAttribute("name","გამარჯობა "+session.getUser().getNameSurname());
                 return "admin/index";
             }else {
