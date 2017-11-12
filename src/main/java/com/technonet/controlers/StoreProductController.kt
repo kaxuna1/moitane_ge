@@ -2,16 +2,19 @@ package com.technonet.controlers
 
 import com.technonet.Enums.JsonReturnCodes
 import com.technonet.Repository.*
-import com.technonet.model.JsonMessage
-import com.technonet.model.Price
-import com.technonet.model.ProductType
-import com.technonet.model.StoreProduct
+import com.technonet.model.*
 import com.technonet.staticData.PermisionChecks
+import org.hibernate.criterion.Order
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.*
+import javax.persistence.EntityManager
+import org.springframework.data.jpa.domain.Specifications.where
+import javax.persistence.criteria.CriteriaBuilder
+
 
 @Controller
 @Transactional
@@ -21,7 +24,8 @@ open class StoreProductController(val sessionRepository: SessionRepository,
                                   val productTypeRepo: ProductTypeRepo,
                                   val storeRepo: StoreRepo,
                                   val priceRepo: PriceRepo,
-                                  val storeProductRepo: StoreProductRepo) {
+                                  val storeProductRepo: StoreProductRepo,
+                                  val entityManager: EntityManager) {
     @RequestMapping("/createStoreProduct")
     @ResponseBody
     open fun createProuctType(@CookieValue(value = "projectSessionId", defaultValue = "0") sessionId: Long,
@@ -36,11 +40,8 @@ open class StoreProductController(val sessionRepository: SessionRepository,
             var storeProduct = StoreProduct(name, session.user.store, productTypeRepo.findOne(type), productSubTypeRepo.findOne(subType), session.user)
             try {
                 storeProduct = storeProductRepo.save(storeProduct)
-
-
-
                 priceRepo.save(Price(price, storeProduct))
-
+                storeProduct.currentPrice = price
 
 
                 return JsonMessage(JsonReturnCodes.Ok)
@@ -75,10 +76,37 @@ open class StoreProductController(val sessionRepository: SessionRepository,
     }
 
 
-    @RequestMapping("/searchProducts/{store}/{type}/{subType}")
+    @RequestMapping("/searchProducts/{index}")
     @ResponseBody
-    open fun searchStoreProducts(){
+    open fun searchStoreProducts(@RequestParam("store") storeId: Long,
+                                 @PathVariable("index") index: Int,
+                                 @RequestParam("type", defaultValue = "0") typeId: Long,
+                                 @RequestParam("sort", defaultValue = "0") sort: Int,
+                                 @RequestParam("subType", defaultValue = "0") subTypeId: Long): Any {
 
+
+        var specifications = where(StoreProductSpecification.storeSpec(storeRepo.findOne(storeId)))
+
+        if (typeId > 0)
+            specifications = specifications.and(StoreProductSpecification.typeSpec(productTypeRepo.findOne(typeId)))
+        if (subTypeId > 0)
+            specifications = specifications.and(StoreProductSpecification.subTypeSpec(productSubTypeRepo.findOne(subTypeId)))
+
+
+        val builder = entityManager.criteriaBuilder
+        val query = builder.createQuery(StoreProduct::class.java)
+        val root = query.from(StoreProduct::class.java)
+
+
+
+        return entityManager.
+                createQuery(query.where(specifications.toPredicate(root, query, builder))
+                        .orderBy(builder.asc(root.get(
+                                if (sort == 0)
+                                    StoreProduct_.name
+                                else
+                                    StoreProduct_.currentPrice))
+                        ).select(root)).setFirstResult(index*10).setMaxResults(10).resultList
     }
 
 
@@ -93,6 +121,8 @@ open class StoreProductController(val sessionRepository: SessionRepository,
         if (product != null && PermisionChecks.storeProductManagement(session) && PermisionChecks.ownProduct(session, product)) {
             try {
                 priceRepo.save(Price(price, product))
+                product.currentPrice = price
+                storeProductRepo.save(product)
                 return JsonMessage(JsonReturnCodes.Ok)
             } catch (e: Exception) {
                 return JsonMessage(JsonReturnCodes.ERROR)
