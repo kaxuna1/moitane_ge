@@ -1,0 +1,14 @@
+.clear { clear:both; }
+
+.TypesNavContainer{
+
+}
+.TypeNav{
+    float: left;
+    padding: 10px;
+    cursor: pointer
+}
+.TypeSubNav{
+    float: left;
+    padding: 10px;
+}
