@@ -20,12 +20,15 @@ public class StoreProduct {
     @Column
     private String name;
 
+    @JsonIgnore
     @Column
     private boolean active;
 
+    @JsonIgnore
     @Column
     private Date createDate;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "storeId")
     private Store store;
@@ -54,6 +57,9 @@ public class StoreProduct {
 
     @OneToMany(mappedBy = "storeProduct", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<GalleryPicture> galleryPictures;
+
+    @Column
+    private double currentPrice;
 
 
     public StoreProduct(String name, Store store, ProductType productType, ProductSubType productSubType, User createdBy) {
@@ -158,5 +164,13 @@ public class StoreProduct {
 
     public void setGalleryPictures(List<GalleryPicture> galleryPictures) {
         this.galleryPictures = galleryPictures;
+    }
+
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    public void setCurrentPrice(double currentPrice) {
+        this.currentPrice = currentPrice;
     }
 }

@@ -25,10 +25,13 @@ public class GalleryPicture {
     @JoinColumn(name = "storeProductId")
     @JsonIgnore
     private StoreProduct storeProduct;
+    @JsonIgnore
     @Column
     private String extension;
+    @JsonIgnore
     @Column
     private Date date;
+    @JsonIgnore
     @Column
     private boolean active;
 
