@@ -4,7 +4,10 @@ package com.technonet.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "StoreProducts")
@@ -44,6 +47,15 @@ public class StoreProduct {
     private User createdBy;
 
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "storeProduct", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Price> prices;
+
+
+    @OneToMany(mappedBy = "storeProduct", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<GalleryPicture> galleryPictures;
+
+
     public StoreProduct(String name, Store store, ProductType productType, ProductSubType productSubType, User createdBy) {
         this.name = name;
         this.store = store;
@@ -52,6 +64,8 @@ public class StoreProduct {
         this.createdBy = createdBy;
         this.active = true;
         this.createDate = new Date();
+        this.prices = new ArrayList<>();
+        this.galleryPictures = new ArrayList<>();
     }
     public StoreProduct(){}
 
@@ -127,6 +141,22 @@ public class StoreProduct {
         return productSubType!= null?productSubType.getName():"";
     }
     public double getPrice(){
-        return 5.5d;
+        return prices.stream().max(Comparator.comparing(Price::getCreateDate)).get().getPrice();
+    }
+
+    public List<Price> getPrices() {
+        return prices;
+    }
+
+    public void setPrices(List<Price> prices) {
+        this.prices = prices;
+    }
+
+    public List<GalleryPicture> getGalleryPictures() {
+        return galleryPictures;
+    }
+
+    public void setGalleryPictures(List<GalleryPicture> galleryPictures) {
+        this.galleryPictures = galleryPictures;
     }
 }

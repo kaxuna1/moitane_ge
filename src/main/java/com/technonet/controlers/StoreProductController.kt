@@ -3,6 +3,7 @@ package com.technonet.controlers
 import com.technonet.Enums.JsonReturnCodes
 import com.technonet.Repository.*
 import com.technonet.model.JsonMessage
+import com.technonet.model.Price
 import com.technonet.model.ProductType
 import com.technonet.model.StoreProduct
 import com.technonet.staticData.PermisionChecks
@@ -19,6 +20,7 @@ open class StoreProductController(val sessionRepository: SessionRepository,
                                   val productSubTypeRepo: ProductSubTypeRepo,
                                   val productTypeRepo: ProductTypeRepo,
                                   val storeRepo: StoreRepo,
+                                  val priceRepo: PriceRepo,
                                   val storeProductRepo: StoreProductRepo) {
     @RequestMapping("/createStoreProduct")
     @ResponseBody
@@ -31,9 +33,16 @@ open class StoreProductController(val sessionRepository: SessionRepository,
         val session = sessionRepository.findOne(sessionId);
 
         if (PermisionChecks.storeProductManagement(session)) {
-            val storeProduct = StoreProduct(name,session.user.store,productTypeRepo.findOne(type),productSubTypeRepo.findOne(subType),session.user)
+            var storeProduct = StoreProduct(name, session.user.store, productTypeRepo.findOne(type), productSubTypeRepo.findOne(subType), session.user)
             try {
-                storeProductRepo.save(storeProduct)
+                storeProduct = storeProductRepo.save(storeProduct)
+
+
+
+                priceRepo.save(Price(price, storeProduct))
+
+
+
                 return JsonMessage(JsonReturnCodes.Ok)
             } catch (e: Exception) {
                 e.printStackTrace();
@@ -43,16 +52,17 @@ open class StoreProductController(val sessionRepository: SessionRepository,
             return JsonMessage(JsonReturnCodes.ERROR)
         }
     }
+
     @RequestMapping("/getStoreProducts/{index}")
     @ResponseBody
     open fun getStoreProducts(@CookieValue(value = "projectSessionId", defaultValue = "0") sessionId: Long,
-                              @PathVariable("index") index: Int):Any{
+                              @PathVariable("index") index: Int): Any {
         val session = sessionRepository.findOne(sessionId);
         if (PermisionChecks.storeProductManagement(session)) {
-            try{
+            try {
 
-                return storeProductRepo.getProductsForStoreAdmin(session.user.store,constructPageSpecification(index,10))
-            }catch (e:Exception){
+                return storeProductRepo.getProductsForStoreAdmin(session.user.store, constructPageSpecification(index, 10))
+            } catch (e: Exception) {
                 e.printStackTrace();
                 return JsonMessage(JsonReturnCodes.ERROR)
             }
@@ -65,6 +75,33 @@ open class StoreProductController(val sessionRepository: SessionRepository,
     }
 
 
+    @RequestMapping("/searchProducts/{store}/{type}/{subType}")
+    @ResponseBody
+    open fun searchStoreProducts(){
+
+    }
+
+
+    @RequestMapping("/changePrice")
+    @ResponseBody
+    open fun changePrice(@CookieValue(value = "projectSessionId", defaultValue = "0") sessionId: Long,
+                         @RequestParam(value = "id", required = true, defaultValue = "") id: Long,
+                         @RequestParam(value = "price", required = true, defaultValue = "") price: Double): Any {
+        val session = sessionRepository.findOne(sessionId)
+        val product = storeProductRepo.findOne(id)
+
+        if (product != null && PermisionChecks.storeProductManagement(session) && PermisionChecks.ownProduct(session, product)) {
+            try {
+                priceRepo.save(Price(price, product))
+                return JsonMessage(JsonReturnCodes.Ok)
+            } catch (e: Exception) {
+                return JsonMessage(JsonReturnCodes.ERROR)
+            }
+        } else {
+            return JsonMessage(JsonReturnCodes.ERROR)
+        }
+
+    }
 
 
     private fun constructPageSpecification(pageIndex: Int, size: Int): Pageable {

@@ -1,10 +1,7 @@
 package com.technonet.controlers;
 
 import com.technonet.Repository.*;
-import com.technonet.model.Category;
-import com.technonet.model.GalleryPicture;
-import com.technonet.model.Session;
-import com.technonet.model.User;
+import com.technonet.model.*;
 import com.technonet.staticData.PermisionChecks;
 import com.technonet.staticData.Variables;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +23,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -33,19 +31,20 @@ import java.util.UUID;
  */
 @Controller
 public class GalleryPicturesController {
-    @RequestMapping("uploadGalleryPic/{id}")
+    @RequestMapping("uploadProductPic/{id}")
     @ResponseBody
     public boolean uploadFile(@CookieValue(value = "projectSessionId", defaultValue = "0") long sessionId,
                               @PathVariable("id") long id,
                               @RequestParam("file") MultipartFile file) {
         Session session = sessionRepository.findOne(sessionId);
-        if (!PermisionChecks.galleryManagement(session))
+        StoreProduct storeProduct = storeProductRepo.findOne(id);
+        if (!PermisionChecks.storeProductManagement(session)&&!PermisionChecks.ownProduct(session,storeProduct))
             return false;
         if (file.isEmpty()) {
             return false;
         } else {
             try {
-                User user = userRepository.findOne(id);
+                User user = session.getUser();
                 UUID uuid = UUID.randomUUID();
                 BufferedImage bufferedImage = ImageIO.read(file.getInputStream());
                 int w = bufferedImage.getWidth();
@@ -72,7 +71,7 @@ public class GalleryPicturesController {
 
                 Files.copy(is, Paths.get(Variables.appDir + "/images/galleryPics", uuid.toString()));
                 Files.copy(isIcon, Paths.get(Variables.appDir + "/images/galleryPicLogos", uuid.toString()));
-                galleryPictureRepo.save(new GalleryPicture(uuid.toString(), user, file.getContentType()));
+                galleryPictureRepo.save(new GalleryPicture(uuid.toString(), user, storeProduct,file.getContentType()));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -133,7 +132,7 @@ public class GalleryPicturesController {
         return galleryPictureRepo.findByUserAndActiveOrderByDate(userRepository.findOne(id), true, constructPageSpecification(page));
     }
 
-    @RequestMapping(value = "userpicture/{pic}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+    @RequestMapping(value = "picture/{pic}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
     public byte[] userPic(HttpServletResponse response, @CookieValue("projectSessionId") long sessionId, @PathVariable("pic") String pic) {
         Path path = Paths.get(Variables.appDir + "/images/galleryPics/" + pic);
@@ -153,8 +152,14 @@ public class GalleryPicturesController {
             }
         }
     }
+    @RequestMapping("/getProductPictures/{id}")
+    @ResponseBody
+    public List<GalleryPicture> getProductPictures(@PathVariable("id") long id){
+        return storeProductRepo.findOne(id).getGalleryPictures();
+    }
 
-    @RequestMapping(value = "userpicturelogo/{pic}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+
+    @RequestMapping(value = "picturelogo/{pic}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
     public byte[] userPicLogo(HttpServletResponse response, @CookieValue("projectSessionId") long sessionId, @PathVariable("pic") String pic) {
 
@@ -192,4 +197,6 @@ public class GalleryPicturesController {
     private DocTypeRepo docTypeRepo;
     @Autowired
     private GalleryPictureRepo galleryPictureRepo;
+    @Autowired
+    private StoreProductRepo storeProductRepo;
 }

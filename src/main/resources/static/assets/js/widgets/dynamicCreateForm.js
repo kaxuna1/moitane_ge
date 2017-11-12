@@ -307,6 +307,7 @@ function OuterFunc(localKey, localValueField, localNameField, random, element, I
         $.getJSON(url, function (result) {
             console.log(result);
             console.log(localKey);
+            $("#" + localKey + random + "").append('<option value="' + 0 + '">აირჩიეთ მნიშვნელობა</option>')
             for (key2 in result) {
                 if (IdToNameMap) {
                     IdToNameMap[result[key2][localValueField]] = result[key2][localNameField];

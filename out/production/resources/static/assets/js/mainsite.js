@@ -947,6 +947,7 @@ $(".settingsBtn").click(function () {
                             name: strings.main_label_email,
                             type: "text",
                             value: result.email,
+                            //dynamicCreateFormFilterSample
                             filter: function (val) {
                                 var valid = true;
                                 $.ajax({

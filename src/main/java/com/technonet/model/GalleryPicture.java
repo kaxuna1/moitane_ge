@@ -21,6 +21,10 @@ public class GalleryPicture {
     @JoinColumn(name = "userId")
     @JsonIgnore
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "storeProductId")
+    @JsonIgnore
+    private StoreProduct storeProduct;
     @Column
     private String extension;
     @Column
@@ -34,6 +38,14 @@ public class GalleryPicture {
         this.extension = extension;
         this.date=new Date();
         this.active=true;
+    }
+    public GalleryPicture(String name, User user,StoreProduct storeProduct, String extension) {
+        this.name = name;
+        this.user = user;
+        this.extension = extension;
+        this.date=new Date();
+        this.active=true;
+        this.storeProduct = storeProduct;
     }
 
     public GalleryPicture(){}
@@ -84,5 +96,13 @@ public class GalleryPicture {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public StoreProduct getStoreProduct() {
+        return storeProduct;
+    }
+
+    public void setStoreProduct(StoreProduct storeProduct) {
+        this.storeProduct = storeProduct;
     }
 }

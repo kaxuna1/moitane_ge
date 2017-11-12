@@ -1,10 +1,8 @@
 package com.technonet.staticData;
 
 import com.technonet.Enums.PERMISSIONS;
-import com.technonet.model.Order;
-import com.technonet.model.Permission;
-import com.technonet.model.Session;
-import com.technonet.model.User;
+import com.technonet.model.*;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by kakha on 3/2/2017.
@@ -98,5 +96,11 @@ public class PermisionChecks {
         return session.isIsactive() &&(
                         session.getUser().getId()==order.getUser().getId()||
                         session.getUser().getId()==order.getTeacher().getId());
+    }
+
+    public static boolean ownProduct(Session session, StoreProduct product) {
+
+        return session.isIsactive()&&
+                session.getUser().getStore().getId()==product.getStore().getId();
     }
 }
