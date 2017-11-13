@@ -13,6 +13,9 @@ public interface ProductTypeRepo extends JpaRepository<ProductType,Long> {
 
     List<ProductType> findByActive(boolean active);
 
+
+    List<ProductType> findByName( String name);
+
 /*
     @Query(value = "select * FROM ",nativeQuery = true)
     List<ProductType> testSelect(@Param("activVal") boolean activVal);*/

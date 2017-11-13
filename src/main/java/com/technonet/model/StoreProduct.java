@@ -64,6 +64,12 @@ public class StoreProduct {
     @Column
     private String description;
 
+    @Column
+    private double count;
+
+    @Column
+    private String code;
+
 
     public StoreProduct(String name, Store store, ProductType productType, ProductSubType productSubType, User createdBy) {
         this.name = name;
@@ -75,6 +81,7 @@ public class StoreProduct {
         this.createDate = new Date();
         this.prices = new ArrayList<>();
         this.galleryPictures = new ArrayList<>();
+        this.count = 0;
     }
     public StoreProduct(){}
 
@@ -183,5 +190,21 @@ public class StoreProduct {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public double getCount() {
+        return count;
+    }
+
+    public void setCount(double count) {
+        this.count = count;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

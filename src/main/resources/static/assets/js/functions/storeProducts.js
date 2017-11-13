@@ -1,5 +1,5 @@
 function loadStoreProducts(index, search) {
-    $.getJSON("/getStoreProducts/" + index, function (result) {
+    $.getJSON("/getStoreProducts/" + index+"?search="+search, function (result) {
         $("#dataGridHeader").html("");
         $("#dataGridBody").html("");
         $("#paginationUl").html("");
@@ -25,7 +25,7 @@ function loadStoreProducts(index, search) {
         }
         $(".paginate_button").click(function () {
             //console.log($(this).val())
-            loadCategoriesData($(this).val(), search)
+            loadStoreProducts($(this).val(), search)
         });
         $(".deleteCat").click(function () {
             /*)*/
@@ -206,40 +206,13 @@ function loadStoreProducts(index, search) {
                })
            })
         });
-        DOMElements.infoDiv.append("<h2>"+strings.admin_label_price+":"+DOMElements.currentElement.price+"</h2>")
+        DOMElements.infoDiv.append("<h2>"+strings.admin_label_price+":"+DOMElements.currentElement.price+"</h2>");
+        DOMElements.infoDiv.append("<h2>"+strings.admin_label_code+":"+DOMElements.currentElement.code+"</h2>");
+        DOMElements.infoDiv.append("<h2>"+strings.admin_label_quantity+":"+DOMElements.currentElement.count+"</h2>");
+        DOMElements.infoDiv.append("<h2>"+strings.admin_label_description+":</h2><span>"+DOMElements.currentElement.description+"</span>");
     }
 
-    function drawInfoPage(DOMElements) {
-        DOMElements.infoDiv.html("");
-        DOMElements.infoDiv.append(
-            "<div id='categoryLogoDiv' class='row'>" +
-            "<div class='col-md-2'>" +
-            "<img style='width: 150px' src='categorylogo/" + DOMElements.currentElement.id + "?" + new Date().getTime() + "'/>" +
-            "</div>" +
-            "<div class='col-md-2'>" +
-            "</div>" +
-            "</div>" +
-            "<div id='catColor' class='row'>" +
-            "<div class='col-md-2'>" +
-            "color:" + DOMElements.currentElement.color +
-            "</div>" +
-            "<div class='col-md-2'>" +
-            "</div>" +
-            "</div>" +
-            "<div id='catColor' class='row'>" +
-            "<div class='col-md-12'>" +
-            "Description:" + DOMElements.currentElement.description +
-            "</div>" +
-            "</div>");
-        DOMElements.infoDiv.append(
-            "<div class='row'>" +
-            "<div>" +
-            "</div>"
-        )
-        dropBoxFunc('promptModal' + DOMElements.rand, "uploadcategorylogo/" + DOMElements.currentElement.id, function () {
-            drawInfoPage(DOMElements);
-        });
-    }
+
 
 
 }

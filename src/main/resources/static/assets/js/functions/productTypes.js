@@ -24,7 +24,7 @@ function loadProductTypes(index, search) {
         }
         $(".paginate_button").click(function () {
             //console.log($(this).val())
-            loadCategoriesData($(this).val(), search)
+            loadProductTypes($(this).val(), search)
         });
         $(".deleteCat").click(function () {
             /*)*/

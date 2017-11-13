@@ -19,6 +19,7 @@ $(document).ready(function () {
         for (var key in result) {
             var permission = result[key];
             permissions[permission.code] = permission;
+            var searchText = $("#searchText");
             switch (permission.code) {
                 case "users":
                     navigation.append('<li id="loadUsersButton" class="k">' +
@@ -34,6 +35,7 @@ $(document).ready(function () {
                             datarowSlide = true;
                         }
                         loadUsersData(0, "",1);
+                        searchText.unbind()
                     });
 
                     loadUsersData(0, "",1);
@@ -53,6 +55,7 @@ $(document).ready(function () {
                             datarowSlide = true;
                         }
                         loadTexts(0, "");
+                        searchText.unbind()
                     });
                     break;
                 case "payments":
@@ -72,6 +75,7 @@ $(document).ready(function () {
                             datarowSlide = true;
                         }
                         loadStores(0, "");
+                        searchText.unbind()
                     });
 
                     break;
@@ -89,6 +93,11 @@ $(document).ready(function () {
                             datarowSlide = true;
                         }
                         loadProductTypes(0, "");
+                        searchText.unbind();
+                        searchText.change(function () {
+                            var value = $(this).val();
+                            loadProductTypes(0, value);
+                        })
                     });
                     break;
                 case "store_product_management":
@@ -105,6 +114,11 @@ $(document).ready(function () {
                             datarowSlide = true;
                         }
                         loadStoreProducts(0, "");
+                        searchText.unbind()
+                        searchText.change(function () {
+                            var value = $(this).val();
+                            loadStoreProducts(0, value);
+                        })
                     });
                     $("#loadStoreProducts").click();
                     break;
