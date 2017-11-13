@@ -1,0 +1,67 @@
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.galleryWrapper {
+    overflow-x: scroll;
+    position: relative;
+    white-space: nowrap;
+    height: 135px;
+    width: 100%;
+}
+
+
+.imageWrapper {
+    height: auto;
+    margin: 3px auto 0 auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 90%;
+}
+
+.tpNavPrevThumb, .tpNavNextThumb {
+    position: absolute;
+    top: 45px;
+}
+
+.tpNavPrevThumb {
+    left: 0;
+}
+
+.tpNavNextThumb {
+    right: 0;
+}
+
+.buttonTpNav {
+    background: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.42);
+    cursor: pointer;
+    font-size: 1.4em;
+    height: 40px;
+    opacity: .5;
+    outline: none;
+    width: 40px;
+}
+button:hover {
+    opacity: 1;
+}
+
+.pkmn {
+    height: auto;
+    width: 120px;
+    padding: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.activetpNav {
+    border: 1px solid rgba(30, 9, 18, 0.25);
+}
+
+
+
