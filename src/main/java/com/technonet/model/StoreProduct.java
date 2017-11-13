@@ -61,6 +61,9 @@ public class StoreProduct {
     @Column
     private double currentPrice;
 
+    @Column
+    private String description;
+
 
     public StoreProduct(String name, Store store, ProductType productType, ProductSubType productSubType, User createdBy) {
         this.name = name;
@@ -172,5 +175,13 @@ public class StoreProduct {
 
     public void setCurrentPrice(double currentPrice) {
         this.currentPrice = currentPrice;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

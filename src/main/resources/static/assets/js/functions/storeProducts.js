@@ -73,6 +73,10 @@ function loadStoreProducts(index, search) {
                     price: {
                         name: strings["store_product_price"],
                         type: "number"
+                    },
+                    description: {
+                        name: strings["store_product_description"],//TODO add label to DB
+                        type: "text"
                     }
                 }, function () {
                     modal.modal("hide");

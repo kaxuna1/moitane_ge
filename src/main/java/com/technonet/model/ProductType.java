@@ -1,6 +1,8 @@
 package com.technonet.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,9 +27,11 @@ public class ProductType {
     private boolean active;
 
     @OneToMany(mappedBy = "productType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+
     private List<ProductSubType> productSubTypes;
 
     @OneToMany(mappedBy = "productType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<StoreProduct> storeProducts;
 
 

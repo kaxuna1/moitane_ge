@@ -30,6 +30,7 @@ open class StoreProductController(val sessionRepository: SessionRepository,
     @ResponseBody
     open fun createProuctType(@CookieValue(value = "projectSessionId", defaultValue = "0") sessionId: Long,
                               @RequestParam(value = "name", required = true, defaultValue = "") name: String,
+                              @RequestParam(value = "description", required = true, defaultValue = "") description: String,
                               @RequestParam(value = "type", required = true, defaultValue = "") type: Long,
                               @RequestParam(value = "price", required = true, defaultValue = "") price: Double,
                               @RequestParam(value = "subType", required = true, defaultValue = "") subType: Long): Any {
