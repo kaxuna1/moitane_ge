@@ -134,7 +134,7 @@ public class GalleryPicturesController {
 
     @RequestMapping(value = "picture/{pic}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
-    public byte[] userPic(HttpServletResponse response, @CookieValue("projectSessionId") long sessionId, @PathVariable("pic") String pic) {
+    public byte[] userPic(HttpServletResponse response, @CookieValue(value = "projectSessionId",defaultValue = "0") long sessionId, @PathVariable("pic") String pic) {
         Path path = Paths.get(Variables.appDir + "/images/galleryPics/" + pic);
         response.setContentType("image/jpeg");
         response.setHeader("Content-disposition", "attachment; filename=pic.jpg");
@@ -161,7 +161,7 @@ public class GalleryPicturesController {
 
     @RequestMapping(value = "picturelogo/{pic}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
-    public byte[] userPicLogo(HttpServletResponse response, @CookieValue("projectSessionId") long sessionId, @PathVariable("pic") String pic) {
+    public byte[] userPicLogo(HttpServletResponse response, @CookieValue(name = "projectSessionId",defaultValue = "0") long sessionId, @PathVariable("pic") String pic) {
 
         Path path = Paths.get(Variables.appDir + "/images/galleryPicLogos/" + pic);
         response.setContentType("image/jpeg");
