@@ -73,7 +73,7 @@ $(document).ready(function () {
                         }
                         loadStores(0, "");
                     });
-                    break;
+
                     break;
                 case "product_type":
                     navigation.append('<li id="loadProductTypes" class="k">' +
@@ -106,6 +106,7 @@ $(document).ready(function () {
                         }
                         loadStoreProducts(0, "");
                     });
+                    $("#loadStoreProducts").click();
                     break;
                 default:
 
