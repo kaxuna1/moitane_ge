@@ -3,6 +3,10 @@
 .TypesNavContainer{
 
 }
+
+.TypesNavSubContainer{
+
+}
 .TypeNav{
     float: left;
     padding: 10px;
@@ -11,4 +15,5 @@
 .TypeSubNav{
     float: left;
     padding: 10px;
+    cursor: pointer
 }
