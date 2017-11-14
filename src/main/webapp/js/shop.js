@@ -7,43 +7,42 @@ var Types = {
         });
     },
     GetTypes: function (callBack) {
-        AjaxRequest("types","GET",function (data) {
+        AjaxRequest("types", "GET", function (data) {
             callBack(data);
         });
     },
-    GetSubTypes: function (typeId,callBack) {
-        AjaxRequest("subTypes/"+typeId,"GET",function (data) {
+    GetSubTypes: function (typeId, callBack) {
+        AjaxRequest("subTypes/" + typeId, "GET", function (data) {
             callBack(data);
         });
     },
-    CreateTypesNav:function (data) {
-      var TypesNavContainer = $("#TypesNavContainer");
-      $.each(data,function (i,d) {
-         var typeItem = $(`<div  class="TypeNav">
-                           <img src="images/logos/good.jpg" width="100" height="100">
-                           <div style="text-align: center">${d.name}</div>
-                          </div>`);
-          typeItem.data(d);
+    CreateTypesNav: function (data) {
+        var TypesNavContainer = $("#TypesNavContainer");
+        $.each(data, function (i, d) {
+            var typeItem = $(`<div id="p${i}" class="pkmn pkmnTpNav1">
+                                <img src="images/logos/good.jpg" width="100" height="100">
+                                <div style="text-align: center">${d.name}</div>
+                              </div>`);
+            typeItem.data(d);
 
-          typeItem.click(function (e) {
-              var cmp = $(this);
-              var data = cmp.data();
-              Types.GetSubTypes(data.id,function (subData) {
-                  Types.CreateSubTypeNav(subData,data.id);
-              });
-              Products.GetProducts(0,Products.storeId,Products.sort,data.id,0,function () {
-                  Products.CreateProducts(data.storeProducts);
-              });
-          });
 
-          TypesNavContainer.append(typeItem);
-      });
+            typeItem.click(function (e) {
+                Types.onClickTypeNav($(this));
+            });
+
+            TypesNavContainer.append(typeItem);
+        });
     },
-    CreateSubTypeNav:function (data,typeId) {
+    CreateSubTypeNav: function (data, typeId) {
         var TypesNavSubContainer = $("#TypesNavSubContainer");
         TypesNavSubContainer.empty();
+
+        if (data.length != 0) {
+            $(".TypesNavSubContainerWrapper").show();
+        }
+
         $.each(data, function (i, d) {
-            var stypeItem = $(`<div  class="TypeSubNav">
+            var stypeItem = $(`<div id="p${i}" class="pkmn pkmnTpNav2">
                            <img src="images/logos/good.jpg" width="100" height="100">
                            <div style="text-align: center">${d.name}</div>
                           </div>`);
@@ -51,16 +50,35 @@ var Types = {
             stypeItem.data(d);
 
             stypeItem.click(function (e) {
-                var cmp = $(this);
-                var data = cmp.data();
-                Products.GetProducts(0,Products.storeId,Products.sort,data.typeId,data.id,function () {
-                    Products.CreateProducts(data.storeProducts);
-                });
+                Types.onClickSubTypeNav($(this));
             });
 
             TypesNavSubContainer.append(stypeItem);
         });
 
+    },
+    //Events============================================
+    onClickTypeNav: function (cmp) {
+        var data = cmp.data();
+        Types.GetSubTypes(data.id, function (subData) {
+            Types.CreateSubTypeNav(subData, data.id);
+        });
+        Products.GetProducts(0, Products.storeId, Products.sort, data.id, 0, function (result) {
+            Products.CreateProducts(result);
+        });
+
+
+        $(".pkmnTpNav1").removeClass("activetpNav")
+        cmp.addClass("activetpNav");
+    },
+    onClickSubTypeNav: function (cmp) {
+        var data = cmp.data();
+        Products.GetProducts(0, Products.storeId, Products.sort, data.typeId, data.id, function () {
+            Products.CreateProducts(data.storeProducts);
+        });
+
+        $(".pkmnTpNav2").removeClass("activetpNav")
+        cmp.addClass("activetpNav");
     }
 }
 
@@ -69,23 +87,22 @@ var Products = {
     sort: 0,
     init: function () {
         var parStoreId = getUrlParameter("store");
-        if(ValueNotEmpty(parStoreId))Products.storeId = parseInt(parStoreId);
-        Products.GetProducts(0,Products.storeId,Products.sort,0,0,function (data) {
+        if (ValueNotEmpty(parStoreId)) Products.storeId = parseInt(parStoreId);
+        Products.GetProducts(0, Products.storeId, Products.sort, 0, 0, function (data) {
             Products.CreateProducts(data);
         });
     },
-    GetProducts: function (page,storeId,sort,typeId,subTypeId,callBack) {
-        AjaxRequest("searchProducts/"+page+"?store="+storeId+"&sort="+sort+"&type="+typeId+"&subType="+subTypeId,"GET",function (data) {
+    GetProducts: function (page, storeId, sort, typeId, subTypeId, callBack) {
+        AjaxRequest("searchProducts/" + page + "?store=" + storeId + "&sort=" + sort + "&type=" + typeId + "&subType=" + subTypeId, "GET", function (data) {
             callBack(data);
         });
     },
     CreateProducts: function (data) {
-       // return
         var ProductContainer = $("#ProductContainer");
         ProductContainer.empty();
-        if(data.length==0)return;
+        if (data.length == 0) return;
         $.each(data, function (i, d) {
-            var Item = $(` <div class="col-md-4 col-sm-6 col-xs-12">
+            var Item = $(`<li><div class="">
                 <div class="make-3D-space ">
                     <div class="product-card">
                         <div class="product-front">
@@ -122,7 +139,7 @@ var Products = {
                         </div>
                     </div>
                 </div>
-            </div>`);
+            </div></li>`);
             Item.data(d);
             ProductContainer.append(Item);
         });
